@@ -1,0 +1,181 @@
+// 通用類
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@each $color, $value in ($color) {
+  .bg-#{$color} {
+    background-color: $value;
+  }
+  .text-#{$color} {
+    color: $value;
+  }
+}
+.text-center {
+  text-align: center;
+}
+.d-flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-direction--column {
+  flex-direction: column;
+}
+.justify-content--between {
+  justify-content: space-between;
+}
+.justify-content--center {
+  justify-content: center;
+}
+.align-items--center {
+  align-items: center;
+}
+.mx-auto {
+  margin: 0 auto;
+}
+.font-italic {
+  font-style: italic;
+}
+.logo{
+  @include hidden-text(80px,49px,url("../img/logo-new_工作區域 1.png"));
+  @include media-breakpoint-sm{
+    width: 48px;
+    height: 30px;
+    background-size: 48px 30px;
+  }
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:30px 88px;
+  @include media-breakpoint-sm{
+    padding:10px 0px;
+    justify-content: center;
+    position: relative;
+  }
+  &__list{
+    @include media-breakpoint-sm{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      max-height:0px;
+      overflow: hidden;
+      width: 100%;
+      top:100%;
+      left: 0;
+      transition:all 0.3s;
+      z-index: 99;
+    }
+    &.active{
+      max-height:248px;
+    }
+  }
+  &__link {
+    color: white;
+    + .navbar__link{
+      margin-left: 64px;
+    }
+    @include media-breakpoint-sm{
+      background-color:map-get($color, secondary );
+      padding: 16px 0;
+      width: 100%;
+      text-align: center;
+      border: 1px solid white;
+      &:hover{
+        background-color:   #8f0400;
+      }
+      + .navbar__link{
+        margin-left: 0px;
+      }
+    }
+  }
+  &__toggler{
+    display: none;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    margin: 0;
+    border: 0;
+    color: white;
+    background-color:transparent;
+    @include media-breakpoint-sm{
+      display: block;
+      position: absolute;
+      left:16px ;
+    }
+  }
+}
+
+
+.banner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 840px;
+  padding-right:360px;
+  background-image: url("../img/68.png");
+  background-size: cover;
+  background-position: center ;
+  background-repeat: no-repeat;
+  @include media-breakpoint-lg{
+    padding-right:48px;
+  }
+  @include media-breakpoint-sm{
+    padding-right:12px;
+    height: 394px;
+  }
+  &__title{
+    text-align: right;
+    &__primary{
+      @include media-breakpoint-md{
+        font-size: 48px;
+        line-height: 72px;
+      }
+      @include media-breakpoint-sm{
+        font-size: 32px;
+        line-height: 72px;
+      }
+    }
+    &__secondary{
+      @include media-breakpoint-md{
+        font-size: 20px;
+        line-height: 30px;
+      }
+      @include media-breakpoint-sm{
+        font-size: 16px;
+        line-height: 30px;
+      }
+    }
+  }
+  
+}
+
+// .section {
+  
+  
+//   &__classic {
+    
+//   }
+//   &__jointName {
+    
+//   }
+//   &__recommend {
+    
+//   }
+//   &__contactUs {
+    
+//   }
+// }
+
+
+// .footer{
+ 
+// }
+
+
+
