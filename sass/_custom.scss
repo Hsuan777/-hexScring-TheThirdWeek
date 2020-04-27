@@ -14,6 +14,9 @@
 .text-center {
   text-align: center;
 }
+.text-right {
+  text-align: right;
+}
 .d-flex {
   display: flex;
 }
@@ -47,25 +50,52 @@
   }
 }
 
+.col-3{
+  width: 23.5%;
+}
+.col-6{
+  width: 42%;
+}
+@include media-breakpoint-md{
+  .col-md-3{
+    width: 23.5%;
+  }
+  .col-md-6{
+    width: 42%;
+  }
+}
+@include media-breakpoint-sm{
+  .col-sm-100{
+    width: 100%;
+  }
+}
+
+
+
 .navbar{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding:30px 88px;
+  @include media-breakpoint-md{
+    padding:30px 48px;
+  }
   @include media-breakpoint-sm{
     padding:10px 0px;
     justify-content: center;
     position: relative;
   }
   &__list{
+    display: flex;
+    justify-content: space-between;
+    width: 512px;
     @include media-breakpoint-sm{
-      display: flex;
       flex-direction: column;
       align-items: center;
       position: absolute;
+      width: 100%;
       max-height:0px;
       overflow: hidden;
-      width: 100%;
       top:100%;
       left: 0;
       transition:all 0.3s;
@@ -77,9 +107,7 @@
   }
   &__link {
     color: white;
-    + .navbar__link{
-      margin-left: 64px;
-    }
+    display: inline-block;
     @include media-breakpoint-sm{
       background-color:map-get($color, secondary );
       padding: 16px 0;
@@ -88,9 +116,6 @@
       border: 1px solid white;
       &:hover{
         background-color:   #8f0400;
-      }
-      + .navbar__link{
-        margin-left: 0px;
       }
     }
   }
@@ -114,63 +139,96 @@
 
 .banner {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
   height: 840px;
-  padding-right:360px;
+  // padding-right:360px;
   background-image: url("../img/68.png");
   background-size: cover;
   background-position: center ;
   background-repeat: no-repeat;
-  @include media-breakpoint-lg{
-    padding-right:48px;
-  }
+  padding-right:48px;
+  // @include media-breakpoint-lg{
+  //   padding-right:48px;
+  // }
   @include media-breakpoint-sm{
     padding-right:12px;
     height: 394px;
   }
+  
+}
+
+.section {
+  padding: 64px 48px 80px  48px;
+  @include media-breakpoint-md{
+    padding-top: 40px;
+  }
+  @include media-breakpoint-sm{
+    padding-top: 32px ;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
   &__title{
-    text-align: right;
-    &__primary{
-      @include media-breakpoint-md{
-        font-size: 48px;
-        line-height: 72px;
+    margin-bottom: 60px;
+  }
+  &__service{
+    .inner{
+      &__list{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include media-breakpoint-sm{
+          justify-content: center;
+        
+        }
+        &__item{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          @include media-breakpoint-md{
+            &:nth-child(1){
+              order: 3;
+            }
+            &:nth-child(2){
+              order: 1;
+              margin-bottom: 50px;
+            }
+            &:nth-child(3){
+              order: 2;
+              margin-bottom: 50px;
+            }
+            &:nth-child(4){
+              order: 4;
+            }
+          }
+          @include media-breakpoint-sm{
+            width: 224px;
+            margin-bottom: 28px;
+          }
+        }
       }
-      @include media-breakpoint-sm{
-        font-size: 32px;
-        line-height: 72px;
-      }
-    }
-    &__secondary{
-      @include media-breakpoint-md{
-        font-size: 20px;
-        line-height: 30px;
-      }
-      @include media-breakpoint-sm{
-        font-size: 16px;
-        line-height: 30px;
+      &__img{
+        width: 100px;
+        height: 100px;
+        margin-bottom: 40px;
       }
     }
   }
   
+  &__classic {
+    
+  }
+  &__jointName {
+    
+  }
+  &__recommend {
+    
+  }
+  &__contactUs {
+    
+  }
 }
-
-// .section {
-  
-  
-//   &__classic {
-    
-//   }
-//   &__jointName {
-    
-//   }
-//   &__recommend {
-    
-//   }
-//   &__contactUs {
-    
-//   }
-// }
 
 
 // .footer{
