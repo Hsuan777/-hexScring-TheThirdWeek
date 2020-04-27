@@ -51,17 +51,17 @@
 }
 
 .col-3{
-  width: 23.5%;
+  max-width: 23.5%;
 }
 .col-6{
-  width: 42%;
+  max-width: 42%;
 }
 @include media-breakpoint-md{
   .col-md-3{
-    width: 23.5%;
+    max-width: 23.5%;
   }
   .col-md-6{
-    width: 42%;
+    max-width: 42%;
   }
 }
 @include media-breakpoint-sm{
@@ -69,7 +69,12 @@
     width: 100%;
   }
 }
-
+.order-1{
+  order: 1;
+}
+.order-2{
+  order: 2;
+}
 
 
 .navbar{
@@ -80,7 +85,7 @@
   @include media-breakpoint-md{
     padding:30px 48px;
   }
-  @include media-breakpoint-sm{
+  @include media-breakpoint-md{
     padding:10px 0px;
     justify-content: center;
     position: relative;
@@ -89,7 +94,7 @@
     display: flex;
     justify-content: space-between;
     width: 512px;
-    @include media-breakpoint-sm{
+    @include media-breakpoint-md{
       flex-direction: column;
       align-items: center;
       position: absolute;
@@ -108,7 +113,7 @@
   &__link {
     color: white;
     display: inline-block;
-    @include media-breakpoint-sm{
+    @include media-breakpoint-md{
       background-color:map-get($color, secondary );
       padding: 16px 0;
       width: 100%;
@@ -128,7 +133,7 @@
     border: 0;
     color: white;
     background-color:transparent;
-    @include media-breakpoint-sm{
+    @include media-breakpoint-md{
       display: block;
       position: absolute;
       left:16px ;
@@ -217,17 +222,78 @@
   }
   
   &__classic {
-    
+    .inner{
+      &__list{
+        display: flex;
+        flex-direction: column;
+        &__item{
+          display: flex;
+          align-items: center;
+          @include media-breakpoint-md{
+            justify-content: center;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 134px;
+            color: white;
+          }
+          &:nth-child(1){
+            @include media-breakpoint-md{
+              background-image: url("../img/8.png");
+              padding-top: 66px;
+            }
+          }
+          &:nth-child(2){
+            margin: 32px 0;
+            @include media-breakpoint-lg{
+              margin: 8px 0;
+              .order-1,.order-2{
+                order: 0;
+              }
+            }
+            @include media-breakpoint-md{
+              background-image: url("../img/15 2.png");
+            }
+          }
+          &:nth-child(3){
+            @include media-breakpoint-md{
+              background-image: url("../img/28.png");
+            }
+          }
+          &__text{
+            display: flex;
+            width: 34%;
+            margin: 0 16px;
+            .h2{
+              margin-left: 8px;
+            }
+            @include media-breakpoint-lg{
+              justify-content: center;
+              .h2{
+                font-size: 28px;
+                line-height: 42px;
+              }
+            }
+          }
+        }
+      }
+      &__img{
+        max-width: 62%;
+        @include media-breakpoint-md{
+          display: none;
+        }
+      }
+    }
   }
-  &__jointName {
+  // &__jointName {
     
-  }
-  &__recommend {
+  // }
+  // &__recommend {
     
-  }
-  &__contactUs {
+  // }
+  // &__contactUs {
     
-  }
+  // }
 }
 
 
