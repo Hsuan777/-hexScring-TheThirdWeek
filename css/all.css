@@ -71,6 +71,7 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -462,7 +463,7 @@ h4, .h4 {
 }
 
 .section {
-  padding: 64px 48px 80px  48px;
+  padding: 64px 48px 80px 48px;
 }
 
 @media screen and (max-width: 768px) {
@@ -621,7 +622,8 @@ h4, .h4 {
   .section__classic .inner__list__item:nth-child(2) {
     margin: 8px 0;
   }
-  .section__classic .inner__list__item:nth-child(2) .order-1, .section__classic .inner__list__item:nth-child(2) .order-2 {
+  .section__classic .inner__list__item:nth-child(2) .order-1,
+  .section__classic .inner__list__item:nth-child(2) .order-2 {
     -webkit-box-ordinal-group: 1;
         -ms-flex-order: 0;
             order: 0;
@@ -696,18 +698,6 @@ h4, .h4 {
   background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
 }
 
-@media screen and (max-width: 576px) {
-  .section__jointName .inner {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
 .section__jointName .inner__img {
   padding: 4px;
 }
@@ -725,7 +715,7 @@ h4, .h4 {
 
 .section__jointName .inner__link::before {
   position: absolute;
-  content: '';
+  content: "";
   bottom: -30px;
   right: 80px;
   width: 259px;
@@ -736,8 +726,8 @@ h4, .h4 {
 
 .section__jointName .inner__link::after {
   position: absolute;
-  content: '';
-  bottom: 25px;
+  content: "";
+  bottom: 30px;
   right: 25px;
   width: 48px;
   height: 48px;
@@ -745,7 +735,7 @@ h4, .h4 {
 }
 
 .section__jointName .inner__item {
-  width: 585px;
+  width: 100%;
   height: 592px;
   font-size: 72px;
   line-height: 108px;
@@ -766,31 +756,17 @@ h4, .h4 {
 
 .section__jointName .inner__item::before {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
-  bottom: 0;
   right: 0;
   left: 0;
+  bottom: 0;
   background-color: rgba(255, 255, 255, 0.5);
-}
-
-@media screen and (max-width: 768px) {
-  .section__jointName .inner__item {
-    width: 324px;
-    height: 280px;
-  }
 }
 
 .section__jointName .inner__item:nth-child(1) {
   margin-right: 30px;
   background-image: url("../img/14.png");
-}
-
-@media screen and (max-width: 576px) {
-  .section__jointName .inner__item:nth-child(1) {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
 }
 
 .section__jointName .inner__item:nth-child(2) {
@@ -804,7 +780,7 @@ h4, .h4 {
 @media screen and (max-width: 1199px) {
   .section__jointName .inner__item__text {
     font-size: 48px;
-    line-height: 72px;
+    line-height: 43px;
   }
 }
 
