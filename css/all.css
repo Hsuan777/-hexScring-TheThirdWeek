@@ -434,25 +434,17 @@ h4, .h4 {
 }
 
 .banner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   height: 840px;
   background-image: url("../img/68.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-right: 48px;
+}
+
+@media screen and (max-width: 1199px) {
+  .banner {
+    padding-right: 48px;
+  }
 }
 
 @media screen and (max-width: 576px) {
