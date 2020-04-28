@@ -482,6 +482,10 @@ h4, .h4 {
   }
 }
 
+.section .inner__list li:last-child {
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 576px) {
   .section__service {
     padding-bottom: 56px;
@@ -548,15 +552,6 @@ h4, .h4 {
 @media screen and (max-width: 576px) {
   .section__service .inner__list__item {
     padding: 0 64px;
-  }
-  .section__service .inner__list__item:nth-child(1) {
-    margin-bottom: 28px;
-  }
-  .section__service .inner__list__item:nth-child(2) {
-    margin-top: 16px;
-    margin-bottom: 28px;
-  }
-  .section__service .inner__list__item:nth-child(3) {
     margin-bottom: 28px;
   }
 }
@@ -567,71 +562,73 @@ h4, .h4 {
   margin-bottom: 40px;
 }
 
-.section__classic .inner__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 .section__classic .inner__list__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  height: 320px;
+  margin-bottom: 32px;
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  .section__classic .inner__list__item {
+    height: 168px;
+  }
 }
 
 @media screen and (max-width: 576px) {
   .section__classic .inner__list__item {
+    height: 134px;
+    color: white;
+    background-position: center;
+    margin-bottom: 8px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 134px;
-    color: white;
   }
 }
 
-@media screen and (max-width: 576px) {
-  .section__classic .inner__list__item:nth-child(1) {
-    background-image: url("../img/8.png");
-    padding-top: 66px;
-  }
+.section__classic .inner__list__item:nth-child(1) {
+  background-image: url("../img/8.png");
 }
 
 .section__classic .inner__list__item:nth-child(2) {
-  margin: 32px 0;
+  background-image: url("../img/15 2.png");
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  background-position: right;
 }
 
 @media screen and (max-width: 768px) {
   .section__classic .inner__list__item:nth-child(2) {
-    margin: 8px 0;
-  }
-  .section__classic .inner__list__item:nth-child(2) .order-1,
-  .section__classic .inner__list__item:nth-child(2) .order-2 {
-    -webkit-box-ordinal-group: 1;
-        -ms-flex-order: 0;
-            order: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    background-position: left;
   }
 }
 
 @media screen and (max-width: 576px) {
   .section__classic .inner__list__item:nth-child(2) {
-    background-image: url("../img/15 2.png");
+    background-position: center;
   }
 }
 
-@media screen and (max-width: 576px) {
-  .section__classic .inner__list__item:nth-child(3) {
-    background-image: url("../img/28.png");
-  }
+.section__classic .inner__list__item:nth-child(3) {
+  background-image: url("../img/28.png");
 }
 
 .section__classic .inner__list__item__text {
@@ -641,11 +638,6 @@ h4, .h4 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  margin: 0 16px;
 }
 
 .section__classic .inner__list__item__text .h2 {
@@ -653,14 +645,26 @@ h4, .h4 {
 }
 
 @media screen and (max-width: 1199px) {
+  .section__classic .inner__list__item__text .h2 {
+    font-size: 28px;
+    line-height: 42px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .section__classic .inner__list__item__text {
+    width: 40%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .section__classic .inner__list__item__text .h2 {
-    font-size: 28px;
-    line-height: 42px;
+}
+
+@media screen and (max-width: 576px) {
+  .section__classic .inner__list__item__text {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
