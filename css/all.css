@@ -130,6 +130,12 @@ h4, .h4 {
   margin: 0 auto;
 }
 
+.container__jointName {
+  max-width: 1600px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
 .bg-primary {
   background-color: #650300;
 }
@@ -214,6 +220,12 @@ h4, .h4 {
           justify-content: center;
 }
 
+.align-items--start {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .align-items--center {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -224,6 +236,12 @@ h4, .h4 {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+}
+
+.align-items--stretch {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .mx-auto {
@@ -252,6 +270,10 @@ h4, .h4 {
 
 .col-6 {
   max-width: 46%;
+}
+
+.col-7 {
+  max-width: 55%;
 }
 
 .col-8 {
@@ -674,7 +696,122 @@ h4, .h4 {
   background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
 }
 
+@media screen and (max-width: 576px) {
+  .section__jointName .inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .section__jointName .inner__img {
   padding: 4px;
+}
+
+.section__jointName .inner__link {
+  position: relative;
+  width: 315px;
+  height: 105px;
+  background-color: white;
+  padding: 0 32px;
+  margin-right: 48px;
+  font-size: 72px;
+  line-height: 108px;
+}
+
+.section__jointName .inner__link::before {
+  position: absolute;
+  content: '';
+  bottom: -30px;
+  right: 80px;
+  width: 259px;
+  height: 167px;
+  background-image: url("../img/5.png");
+  z-index: -1;
+}
+
+.section__jointName .inner__link::after {
+  position: absolute;
+  content: '';
+  bottom: 25px;
+  right: 25px;
+  width: 48px;
+  height: 48px;
+  background-image: url("../img/ic_arrow_forward_24px.svg");
+}
+
+.section__jointName .inner__item {
+  width: 585px;
+  height: 592px;
+  font-size: 72px;
+  line-height: 108px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section__jointName .inner__item::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .section__jointName .inner__item {
+    width: 324px;
+    height: 280px;
+  }
+}
+
+.section__jointName .inner__item:nth-child(1) {
+  margin-right: 30px;
+  background-image: url("../img/14.png");
+}
+
+@media screen and (max-width: 576px) {
+  .section__jointName .inner__item:nth-child(1) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.section__jointName .inner__item:nth-child(2) {
+  background-image: url("../img/39.png");
+}
+
+.section__jointName .inner__item__text {
+  z-index: 9;
+}
+
+@media screen and (max-width: 1199px) {
+  .section__jointName .inner__item__text {
+    font-size: 48px;
+    line-height: 72px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section__jointName .inner__item__text {
+    font-size: 32px;
+    line-height: 43px;
+  }
 }
 /*# sourceMappingURL=all.css.map */
