@@ -131,6 +131,10 @@ h4, .h4 {
   margin: 0 auto;
 }
 
+.container__jointName {
+  max-width: 1600px;
+}
+
 .bg-primary {
   background-color: #650300;
 }
@@ -237,6 +241,14 @@ h4, .h4 {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+}
+
+.mr-1 {
+  margin-right: 0.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
 }
 
 .mx-auto {
@@ -690,20 +702,17 @@ h4, .h4 {
 
 .section__jointName {
   background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
+  padding-bottom: 479px;
 }
 
-.section__jointName .inner__list__mixed {
+.section__jointName .inner__mixed {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 60px;
 }
 
-.section__jointName .inner__list__mixed .inner__img {
-  padding: 4px;
-}
-
-.section__jointName .inner__list__brand {
+.section__jointName .inner__brand {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -713,7 +722,7 @@ h4, .h4 {
 }
 
 @media screen and (max-width: 576px) {
-  .section__jointName .inner__list__brand {
+  .section__jointName .inner__brand {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -724,7 +733,7 @@ h4, .h4 {
   }
 }
 
-.section__jointName .inner__list__brand__item {
+.section__jointName .inner__brand__item {
   /* 若使用 df去做置中，會造成高度不正確 */
   /* 而圖片會自動撐開高度 */
   /* 所以讓文字以定位方式置中，就無需使用 flex*/
@@ -734,9 +743,9 @@ h4, .h4 {
   position: relative;
 }
 
-.section__jointName .inner__list__brand__item::before {
+.section__jointName .inner__brand__item::before {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   bottom: 0;
   right: 0;
@@ -745,29 +754,29 @@ h4, .h4 {
 }
 
 @media screen and (max-width: 576px) {
-  .section__jointName .inner__list__brand__item {
+  .section__jointName .inner__brand__item {
     width: 100%;
   }
 }
 
-.section__jointName .inner__list__brand__item:nth-child(1) {
+.section__jointName .inner__brand__item:nth-child(1) {
   margin-right: 30px;
 }
 
 @media screen and (max-width: 768px) {
-  .section__jointName .inner__list__brand__item:nth-child(1) {
+  .section__jointName .inner__brand__item:nth-child(1) {
     margin-right: 24px;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .section__jointName .inner__list__brand__item:nth-child(1) {
+  .section__jointName .inner__brand__item:nth-child(1) {
     margin-right: 0px;
     margin-bottom: 20px;
   }
 }
 
-.section__jointName .inner__list__brand__text {
+.section__jointName .inner__brand__text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -777,48 +786,38 @@ h4, .h4 {
 }
 
 @media screen and (max-width: 1199px) {
-  .section__jointName .inner__list__brand__text {
+  .section__jointName .inner__brand__text {
     font-size: 48px;
     line-height: 43px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .section__jointName .inner__list__brand__text {
+  .section__jointName .inner__brand__text {
     font-size: 32px;
     line-height: 43px;
   }
 }
 
-.section__jointName .inner__link {
+.section__jointName .inner__more {
   position: relative;
-  width: 315px;
-  height: 105px;
-  background-color: white;
-  padding: 0 32px;
-  margin-right: 48px;
-  font-size: 72px;
-  line-height: 108px;
-}
-
-.section__jointName .inner__link::before {
-  position: absolute;
-  content: "";
-  bottom: -30px;
-  right: 80px;
   width: 259px;
   height: 167px;
-  background-image: url("../img/5.png");
-  z-index: -1;
+  margin-right: 80px;
 }
 
-.section__jointName .inner__link::after {
+.section__jointName .inner__more__text {
   position: absolute;
-  content: "";
-  bottom: 30px;
-  right: 25px;
-  width: 48px;
-  height: 48px;
-  background-image: url("../img/ic_arrow_forward_24px.svg");
+  padding: 0 32px;
+  top: 20%;
+  right: -84px;
+  font-size: 72px;
+  line-height: 108px;
+  background-color: white;
+}
+
+.section__recommend {
+  -webkit-transform: translateY(-399px);
+          transform: translateY(-399px);
 }
 /*# sourceMappingURL=all.css.map */

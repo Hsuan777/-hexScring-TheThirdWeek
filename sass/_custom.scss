@@ -2,6 +2,9 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  &__jointName {
+    max-width: 1600px;
+  }
 }
 
 @each $color, $value in ($color) {
@@ -48,6 +51,13 @@
 .align-items--stretch {
   align-items: stretch;
 }
+
+.mr-1 {
+  margin-right: 0.5rem;
+}
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
 .mx-auto {
   margin: 0 auto;
 }
@@ -64,6 +74,7 @@
 .col-3 {
   max-width: 23%;
 }
+
 .col-6 {
   max-width: 46%;
 }
@@ -344,106 +355,88 @@
   /* 聯名眼鏡 */
   &__jointName {
     background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
+    padding-bottom: 479px;
     .inner {
-      &__list {
-        &__mixed {
-          display: flex;
-          margin-bottom: 60px;
-          .inner__img {
-            padding: 4px;
-          }
+      &__mixed {
+        display: flex;
+        margin-bottom: 60px;
+      }
+      &__brand {
+        display: flex;
+        justify-content: center;
+        @include media-breakpoint-sm {
+          flex-direction: column;
+          align-items: center;
         }
-        &__brand {
-          display: flex;
-          justify-content: center;
-          @include media-breakpoint-sm {
-           flex-direction: column;
-           align-items: center;
+        &__item {
+          /* 若使用 df去做置中，會造成高度不正確 */
+          /* 而圖片會自動撐開高度 */
+          /* 所以讓文字以定位方式置中，就無需使用 flex*/
+          width: 48%;
+          font-size: 72px;
+          line-height: 108px;
+          position: relative;
+          &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(white, $alpha: 0.5);
           }
-          &__item {
-            /* 若使用 df去做置中，會造成高度不正確 */
-            /* 而圖片會自動撐開高度 */
-            /* 所以讓文字以定位方式置中，就無需使用 flex*/
-            width: 48%;
-            font-size: 72px;
-            line-height: 108px;
-            position: relative;
-            &::before{
-              position: absolute;
-              content: '';
-              top: 0;
-              bottom: 0;
-              right: 0;
-              left: 0;
-              background-color: rgba(white, $alpha: 0.5);
+          @include media-breakpoint-sm {
+            width: 100%;
+          }
+          &:nth-child(1) {
+            margin-right: 30px;
+            @include media-breakpoint-md {
+              margin-right: 24px;
             }
             @include media-breakpoint-sm {
-              width: 100%;
-             }
-            &:nth-child(1){
-              margin-right: 30px;
-              @include media-breakpoint-md {
-                margin-right: 24px;
-              }
-              @include media-breakpoint-sm {
-                margin-right: 0px;
-                margin-bottom: 20px;
-              }
-            }
-          }
-          &__text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            white-space: nowrap;
-            @include media-breakpoint-lg {
-              font-size: 48px;
-              line-height: 43px;
-            }
-            @include media-breakpoint-md {
-              font-size: 32px;
-              line-height: 43px;
+              margin-right: 0px;
+              margin-bottom: 20px;
             }
           }
         }
+        &__text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          white-space: nowrap;
+          @include media-breakpoint-lg {
+            font-size: 48px;
+            line-height: 43px;
+          }
+          @include media-breakpoint-md {
+            font-size: 32px;
+            line-height: 43px;
+          }
+        }
       }
-      &__link {
+
+      &__more {
         position: relative;
-        width: 315px;
-        height: 105px;
-        background-color: white;
-        padding: 0 32px;
-        margin-right: 48px;
-        font-size: 72px;
-        line-height: 108px;
-        &::before {
+        width: 259px;
+        height: 167px;
+        margin-right: 80px;
+        &__text {
           position: absolute;
-          content: "";
-          bottom: -30px;
-          right: 80px;
-          width: 259px;
-          height: 167px;
-          background-image: url("../img/5.png");
-          z-index: -1;
-        }
-        &::after {
-          position: absolute;
-          content: "";
-          bottom: 30px;
-          right: 25px;
-          width: 48px;
-          height: 48px;
-          background-image: url("../img/ic_arrow_forward_24px.svg");
+          padding: 0 32px;
+          top: 20%;
+          right: -84px;
+          font-size: 72px;
+          line-height: 108px;
+          background-color: white;
         }
       }
-      
     }
   }
   /* 顧客推薦 */
-  // &__recommend {
-
-  // }
+  &__recommend {
+    transform: translateY(-399px);
+  }
 
   /* 聯絡我們 */
   // &__contactUs {
