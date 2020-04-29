@@ -69,18 +69,10 @@
 .col-3 {
   max-width: 23%;
 }
-.col-4 {
-  max-width: 31.3%;
-}
 .col-6 {
   max-width: 46%;
 }
-.col-7 {
-  max-width: 55%;
-}
-.col-8 {
-  max-width: 62.6%;
-}
+
 @include media-breakpoint-md {
   .col-md-3 {
     max-width: 23.5%;
@@ -192,6 +184,7 @@
 }
 
 .section {
+  /* 區塊設定 */
   padding: 64px 48px 80px 48px;
   @include media-breakpoint-md {
     padding-top: 40px;
@@ -201,15 +194,20 @@
     padding-left: 12px;
     padding-right: 12px;
   }
+  /* 區塊標題 */
   &__title {
     margin-bottom: 60px;
     @include media-breakpoint-sm {
       margin-bottom: 16px;
     }
   }
+  /* ul>li 結構最後一個 li 不往下推擠 */
   .inner__list li:last-child {
     margin-bottom: 0;
   }
+
+  /* 各功能區塊設定 */
+  /* 專業服務 */
   &__service {
     @include media-breakpoint-sm {
       padding-bottom: 56px;
@@ -255,81 +253,86 @@
       }
     }
   }
-
+  /* 經典鏡框 */
   &__classic {
     .inner {
       &__list {
-       
         &__item {
+          /* 調整文字位置 */
           display: flex;
           justify-content: flex-end;
           align-items: center;
-          width:100%;
+          
+          /* 調整圖片大小位置 */
           height: 320px;
           margin-bottom: 32px;
-          background-position: left ;
+          // background-position: left;
           background-size: contain;
           background-repeat: no-repeat;
-          @include media-breakpoint-md {
+          @include media-breakpoint-lg{
+            height: 250px;
+          }
+          @include media-breakpoint-md{
             height: 168px;
+            margin-bottom: 8px;
           }
           @include media-breakpoint-sm {
             height: 134px;
             color: white;
-            background-position: center ;
+            background-position: center;
             margin-bottom: 8px;
             justify-content: center;
           }
           &:nth-child(1) {
-            background-image: url("../img/8.png");
+            @include media-breakpoint-sm {
+              background-image: url("../img/8.png");
+
+            }
           }
           &:nth-child(2) {
-            background-image: url("../img/15 2.png");
             flex-direction: row-reverse;
-            background-position: right;
-            @include media-breakpoint-md {
-              flex-direction: row;
-              background-position: left;
-            }
-            @include media-breakpoint-sm {
-              
-              background-position: center;
-            }
-          }
-          &:nth-child(3) {
-            background-image: url("../img/28.png");
-          }
-          &__text {
-            display: flex;
-            align-items: center;
-           
-            // width: 100%;
-            .h2 {
-              margin-left: 8px;
-            }
-            @include media-breakpoint-lg {
-              .h2 {
+            @include media-breakpoint-lg{
+              .inner__list__item__text{
                 font-size: 28px;
                 line-height: 42px;
               }
             }
             @include media-breakpoint-md {
-              width: 40%;
-              justify-content: center;
+              flex-direction: row;
             }
             @include media-breakpoint-sm {
-               justify-content: center;
+              background-image: url("../img/15 2.png");
+            }
+          }
+          &:nth-child(3) {
+            @include media-breakpoint-sm{
+              background-image: url("../img/28.png");
+
+            }
+          }
+          &__text {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-weight: bolder;
+            padding-left: 24px;
+            width: 40%;
+            @include media-breakpoint-lg{
+              width: 40%;
+              font-size: 36px;
+              line-height: 54px;
+            }
+            @include media-breakpoint-md {
+              width: 34%;
+              justify-content: center;
+              font-size: 28px;
+              line-height: 42px;
             }
           }
         }
       }
-      &__img {
-        max-width: 62%;
-        @include media-breakpoint-sm {
-          display: none;
-        }
-      }
       &__icon {
+        margin-right: 8px;
         width: 48px;
         height: 48px;
         @include media-breakpoint-md {
@@ -337,8 +340,18 @@
           height: 32px;
         }
       }
+      &__img{
+        max-width: 60%;
+        @include media-breakpoint-md {
+        }
+        @include media-breakpoint-sm {
+          display: none;
+        }
+      }
     }
   }
+
+  /* 聯名眼鏡 */
   &__jointName {
     background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
     .inner {
@@ -418,9 +431,12 @@
       }
     }
   }
+  /* 顧客推薦 */
   // &__recommend {
 
   // }
+
+  /* 聯絡我們 */
   // &__contactUs {
 
   // }

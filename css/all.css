@@ -265,20 +265,8 @@ h4, .h4 {
   max-width: 23%;
 }
 
-.col-4 {
-  max-width: 31.3%;
-}
-
 .col-6 {
   max-width: 46%;
-}
-
-.col-7 {
-  max-width: 55%;
-}
-
-.col-8 {
-  max-width: 62.6%;
 }
 
 @media screen and (max-width: 768px) {
@@ -455,7 +443,16 @@ h4, .h4 {
 }
 
 .section {
+  /* 區塊設定 */
   padding: 64px 48px 80px 48px;
+  /* 區塊標題 */
+  /* ul>li 結構最後一個 li 不往下推擠 */
+  /* 各功能區塊設定 */
+  /* 專業服務 */
+  /* 經典鏡框 */
+  /* 聯名眼鏡 */
+  /* 顧客推薦 */
+  /* 聯絡我們 */
 }
 
 @media screen and (max-width: 768px) {
@@ -563,6 +560,7 @@ h4, .h4 {
 }
 
 .section__classic .inner__list__item {
+  /* 調整文字位置 */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -572,17 +570,23 @@ h4, .h4 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
+  /* 調整圖片大小位置 */
   height: 320px;
   margin-bottom: 32px;
-  background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1199px) {
+  .section__classic .inner__list__item {
+    height: 250px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .section__classic .inner__list__item {
     height: 168px;
+    margin-bottom: 8px;
   }
 }
 
@@ -598,17 +602,24 @@ h4, .h4 {
   }
 }
 
-.section__classic .inner__list__item:nth-child(1) {
-  background-image: url("../img/8.png");
+@media screen and (max-width: 576px) {
+  .section__classic .inner__list__item:nth-child(1) {
+    background-image: url("../img/8.png");
+  }
 }
 
 .section__classic .inner__list__item:nth-child(2) {
-  background-image: url("../img/15 2.png");
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
-  background-position: right;
+}
+
+@media screen and (max-width: 1199px) {
+  .section__classic .inner__list__item:nth-child(2) .inner__list__item__text {
+    font-size: 28px;
+    line-height: 42px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -617,68 +628,57 @@ h4, .h4 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    background-position: left;
   }
 }
 
 @media screen and (max-width: 576px) {
   .section__classic .inner__list__item:nth-child(2) {
-    background-position: center;
+    background-image: url("../img/15 2.png");
   }
 }
 
-.section__classic .inner__list__item:nth-child(3) {
-  background-image: url("../img/28.png");
+@media screen and (max-width: 576px) {
+  .section__classic .inner__list__item:nth-child(3) {
+    background-image: url("../img/28.png");
+  }
 }
 
 .section__classic .inner__list__item__text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.section__classic .inner__list__item__text .h2 {
-  margin-left: 8px;
+  font-weight: bolder;
+  padding-left: 24px;
+  width: 40%;
 }
 
 @media screen and (max-width: 1199px) {
-  .section__classic .inner__list__item__text .h2 {
-    font-size: 28px;
-    line-height: 42px;
+  .section__classic .inner__list__item__text {
+    width: 40%;
+    font-size: 36px;
+    line-height: 54px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .section__classic .inner__list__item__text {
-    width: 40%;
+    width: 34%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .section__classic .inner__list__item__text {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
-.section__classic .inner__img {
-  max-width: 62%;
-}
-
-@media screen and (max-width: 576px) {
-  .section__classic .inner__img {
-    display: none;
+    font-size: 28px;
+    line-height: 42px;
   }
 }
 
 .section__classic .inner__icon {
+  margin-right: 8px;
   width: 48px;
   height: 48px;
 }
@@ -687,6 +687,16 @@ h4, .h4 {
   .section__classic .inner__icon {
     width: 32px;
     height: 32px;
+  }
+}
+
+.section__classic .inner__img {
+  max-width: 60%;
+}
+
+@media screen and (max-width: 576px) {
+  .section__classic .inner__img {
+    display: none;
   }
 }
 
