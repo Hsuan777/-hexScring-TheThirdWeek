@@ -1,8 +1,9 @@
 // 通用類
+// TODO: 1540如何正確推擠出去
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  @include media-breakpoint-md {
+  @include media-breakpoint-lg {
     max-width: 1296px;
     padding: 0 48px;
   }
@@ -18,6 +19,7 @@
   }
 }
 
+/* 背景與顏色 */
 @each $color, $value in ($color) {
   .bg-#{$color} {
     background-color: $value;
@@ -26,62 +28,18 @@
     color: $value;
   }
 }
+/* text */
 .text-center {
   text-align: center;
 }
 .text-right {
   text-align: right;
 }
-.d-flex {
-  display: flex;
-}
-.flex-wrap {
-  flex-wrap: wrap;
-}
-.flex-shrink-1 {
-  flex-grow: 1;
-}
-.flex-shrink-2 {
-  flex-grow: 2;
-}
-
-.flex-direction--column {
-  flex-direction: column;
-}
-.justify-content--between {
-  justify-content: space-between;
-}
-.justify-content--end {
-  justify-content: flex-end;
-}
-.justify-content--center {
-  justify-content: center;
-}
-.align-items--start {
-  align-items: flex-start;
-}
-.align-items--center {
-  align-items: center;
-}
-.align-items--end {
-  align-items: flex-end;
-}
-.align-items--stretch {
-  align-items: stretch;
-}
-
-.mr-1 {
-  margin-right: 0.5rem;
-}
-.mb-1 {
-  margin-bottom: 0.5rem;
-}
-.mx-auto {
-  margin: 0 auto;
-}
 .font-italic {
   font-style: italic;
 }
+
+
 .h-100 {
   height: 100%;
 }
@@ -89,31 +47,11 @@
   width: 100%;
 }
 
-.col-3 {
-  width: 23%;
-}
-
-.col-6 {
-  width: 46%;
-}
-
+/* 框線參考用 */
 .border-white {
   border: 1px solid #fff;
 }
 
-@include media-breakpoint-md {
-  .col-md-3 {
-    max-width: 23.5%;
-  }
-  .col-md-6 {
-    max-width: 47%;
-  }
-}
-@include media-breakpoint-sm {
-  .col-sm-100 {
-    max-width: 100%;
-  }
-}
 
 .logo {
   // TODO: 檢查是否需要寬高，或由圖片撐開
@@ -124,90 +62,12 @@
     background-size: 48px 30px;
   }
 }
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px 88px;
-  @include media-breakpoint-md {
-    padding: 30px 48px;
-  }
-  @include media-breakpoint-sm {
-    padding: 10px 0px;
-    justify-content: center;
-    position: relative;
-  }
-  &__list {
-    display: flex;
-    justify-content: space-between;
-    width: 512px;
-    @include media-breakpoint-md {
-      width: 440px;
-    }
-    @include media-breakpoint-sm {
-      flex-direction: column;
-      align-items: center;
-      position: absolute;
-      width: 100%;
-      max-height: 0px;
-      overflow: hidden;
-      top: 100%;
-      left: 0;
-      transition: all 0.3s;
-      z-index: 99;
-    }
-    &.active {
-      max-height: 248px;
-    }
-  }
-  &__link {
-    color: white;
-    display: inline-block;
-    @include media-breakpoint-sm {
-      background-color: map-get($color, secondary);
-      padding: 16px 0;
-      width: 100%;
-      text-align: center;
-      border: 1px solid white;
-      &:hover {
-        background-color: #8f0400;
-      }
-    }
-  }
-  &__toggler {
-    display: none;
-    width: 24px;
-    height: 24px;
-    padding: 2px;
-    margin: 0;
-    border: 0;
-    color: white;
-    background-color: transparent;
-    @include media-breakpoint-sm {
-      display: block;
-      position: absolute;
-      left: 16px;
-    }
-  }
-}
 
-.banner {
-  height: 840px;
-  background-image: url("../img/68.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  // @include media-breakpoint-lg {
-  //   padding-right: 48px;
-  // }
-  @include media-breakpoint-sm {
-    // padding-right: 12px;
-    height: 394px;
-  }
-}
+
+
 
 .section {
-  /* 區塊設定 */
+  /* 區塊基礎設定 */
   padding: 64px 0px 80px 0px;
   @include media-breakpoint-md {
     padding: 40px 0;
@@ -236,38 +96,31 @@
     @include media-breakpoint-sm {
       padding-bottom: 56px;
     }
-    .inner {
-      &__list {
+    .card {
+      &__item {
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        @include media-breakpoint-sm {
-          justify-content: center;
-        }
-        &__item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          @include media-breakpoint-md {
-            &:nth-child(1) {
-              order: 3;
-            }
-            &:nth-child(2) {
-              order: 1;
-              margin-bottom: 50px;
-            }
-            &:nth-child(3) {
-              order: 2;
-              margin-bottom: 50px;
-            }
-            &:nth-child(4) {
-              order: 4;
-            }
+        flex-direction: column;
+        align-items: center;
+        padding: 0 37px;
+        @include media-breakpoint-md {
+        padding: 0 50px;
+          &:nth-child(1) {
+            order: 3;
           }
-          @include media-breakpoint-sm {
-            padding: 0 64px;
-            margin-bottom: 28px;
+          &:nth-child(2) {
+            order: 1;
+            margin-bottom: 50px;
           }
+          &:nth-child(3) {
+            order: 2;
+            margin-bottom: 50px;
+          }
+          &:nth-child(4) {
+            order: 4;
+          }
+        } 
+        @include media-breakpoint-sm{
+          padding: 0 64px;
         }
       }
       &__img {

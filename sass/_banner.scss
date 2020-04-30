@@ -1,0 +1,10 @@
+.banner {
+  height: 840px;
+  background-image: url("../img/68.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include media-breakpoint-sm {
+    height: 394px;
+  }
+}
