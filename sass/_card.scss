@@ -1,49 +1,20 @@
-
-.card{
-  &__list{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    @include media-breakpoint-sm{
-      justify-content: center;
+.card {
+  &__body {
+    padding: 16px;
+    border-right: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    background: white;
+    color: #212529;
+    &__title {
+      margin-bottom: 16px;
+      font-weight: bolder;
+    }
+    &__text {
+      margin-bottom: 16px;
     }
   }
-  &__item{
-    max-width: 23.5%;
-    @include media-breakpoint-md{
-      max-width: 48.2%;
-      margin-bottom: 24px;
-      /* 雙欄排版 */
-      /* TODO:一種方式是:全部推擠後，最後整體容器減掉被推擠高度 */
-      /* 一種方式是:全部推擠後，最後一個與倒數第二個不推擠，但會遇到單數問題 */
-    }
-    @include media-breakpoint-sm {
-      max-width: 93.8%;
-      margin-bottom: 16px;
-      justify-content: center;
-      &:last-child{
-        margin-bottom: 0;
-      }
-    }
-    &__body{
-      padding: 16px;
-      border-right: 1px solid #DEE2E6;
-      border-left: 1px solid #DEE2E6;
-      border-bottom: 1px solid #DEE2E6;
-      background:white;
-      color: #212529;
-      &__title{
-        margin-bottom: 16px;
-        font-weight: bolder;
-      }
-      &__text{
-        margin-bottom: 16px;
-      }
-      &__footer{
-        color: #707070;
-      }
-    }
-    
+  &__footer {
+    color: #707070;
   }
 }
-

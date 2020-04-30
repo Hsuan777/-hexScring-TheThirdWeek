@@ -4,7 +4,10 @@
    -moz-box-sizing: border-box;
    -webkit-box-sizing: border-box;      
 }
-
+// 瀏覽器可能會不一樣
+html{
+  font-size:  $body__font-size;
+}
 body{
   margin: 0 auto;
   font-size: $body__font-size;
@@ -13,7 +16,6 @@ body{
   font-family:  $body__font-family;
   line-height: $body__line-height;
   font-weight: bold;
-  
 }
 
 img{

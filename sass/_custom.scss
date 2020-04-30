@@ -39,7 +39,6 @@
   font-style: italic;
 }
 
-
 .h-100 {
   height: 100%;
 }
@@ -52,7 +51,6 @@
   border: 1px solid #fff;
 }
 
-
 .logo {
   // TODO: 檢查是否需要寬高，或由圖片撐開
   @include hidden-text(80px, 49px, url("../img/logo-new_工作區域 1.png"));
@@ -62,9 +60,6 @@
     background-size: 48px 30px;
   }
 }
-
-
-
 
 .section {
   /* 區塊基礎設定 */
@@ -76,19 +71,34 @@
     padding: 24px 0;
   }
   /* 區塊標題 */
-  // TODO: 依照 spacing級距縮放
-  &__title {
-    margin-bottom: 60px;
-    @include media-breakpoint-md {
-      margin-bottom: 32px;
+  // 依照 spacing級距縮放，預設寫在標題上
+  // &__title {
+  //   margin-bottom: 60px;
+  //   @include media-breakpoint-md {
+  //     margin-bottom: 32px;
+  //   }
+  //   @include media-breakpoint-sm {
+  //     margin-bottom: 16px;
+  //   }
+  // }
+  /* inner預設設定 list、item、title、text、img */
+
+  .inner {
+    &__list {
+      display: flex;
     }
-    @include media-breakpoint-sm {
-      margin-bottom: 16px;
+    &__item {
+      /* 四欄 */
+      max-width: 23.5%;
+      @include media-breakpoint-md {
+        /* 雙欄 */
+        max-width: 48.2%;
+      }
+      @include media-breakpoint-sm {
+        /* 單欄 */
+        max-width: 93.8%;
+      }
     }
-  }
-  /* ul>li 結構最後一個 li 不往下推擠 */
-  .inner__list li:last-child {
-    margin-bottom: 0;
   }
 
   /* 各功能區塊設定 */
@@ -97,14 +107,22 @@
     @include media-breakpoint-sm {
       padding-bottom: 56px;
     }
-    .card {
+    /* 內容客製化 */
+    .inner {
+      &__list {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include media-breakpoint-sm {
+          justify-content: center;
+        }
+      }
       &__item {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0 37px;
         @include media-breakpoint-md {
-        padding: 0 50px;
+          padding: 0 50px;
           &:nth-child(1) {
             order: 3;
           }
@@ -119,8 +137,8 @@
           &:nth-child(4) {
             order: 4;
           }
-        } 
-        @include media-breakpoint-sm{
+        }
+        @include media-breakpoint-sm {
           padding: 0 64px;
         }
       }
@@ -135,80 +153,72 @@
   &__classic {
     .inner {
       &__list {
-        &__item {
-          /* 調整文字位置 */
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-
-          /* 調整圖片大小位置 */
-          height: 320px;
-          margin-bottom: 32px;
-          background-size: contain;
-          background-repeat: no-repeat;
-          @include media-breakpoint-lg {
-            height: 250px;
-          }
-          @include media-breakpoint-md {
-            height: 168px;
-            margin-bottom: 8px;
-          }
-          @include media-breakpoint-sm {
-            height: 134px;
-            color: white;
-            background-position: center;
-            margin-bottom: 8px;
-            justify-content: center;
-          }
-          &:nth-child(1) {
-            @include media-breakpoint-sm {
-              background-image: url("../img/8.png");
-            }
-          }
-          &:nth-child(2) {
-            flex-direction: row-reverse;
-            @include media-breakpoint-md {
-              flex-direction: row;
-            }
-            @include media-breakpoint-sm {
-              background-image: url("../img/15 2.png");
-            }
-          }
-          &:nth-child(3) {
-            @include media-breakpoint-sm {
-              background-image: url("../img/28.png");
-            }
-          }
-          &__text {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            font-weight: bolder;
-            padding-left: 24px;
-            width: 40%;
-
-            @include media-breakpoint-lg {
-              width: 34%;
-              justify-content: center;
-              font-size: 28px;
-              line-height: 42px;
-            }
-          }
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include media-breakpoint-sm {
+          justify-content: center;
         }
       }
-      &__icon {
-        margin-right: 8px;
-        width: 48px;
-        height: 48px;
+      &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
         @include media-breakpoint-md {
-          width: 32px;
-          height: 32px;
+          margin-bottom: 8px;
+        }
+        @include media-breakpoint-sm {
+          justify-content: center;
+          height: 134px;
+          color: white;
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        &:nth-child(1) {
+          @include media-breakpoint-sm {
+            background-image: url("../img/8.png");
+          }
+        }
+        &:nth-child(2) {
+          flex-direction: row-reverse;
+          @include media-breakpoint-md {
+            flex-direction: row;
+          }
+          @include media-breakpoint-sm {
+            background-image: url("../img/15 2.png");
+          }
+        }
+        &:nth-child(3) {
+          @include media-breakpoint-sm {
+            background-image: url("../img/28.png");
+          }
         }
       }
       &__img {
         width: 60%;
         @include media-breakpoint-sm {
           display: none;
+        }
+      }
+      &__text {
+        display: flex;
+        align-items: center;
+        font-weight: bolder;
+        width: 40%;
+        @include media-breakpoint-lg {
+          width: 34%;
+          justify-content: center;
+          font-size: 28px;
+          line-height: 42px;
+        }
+      }
+      &__icon {
+        width: 48px;
+        height: 48px;
+        @include media-breakpoint-md {
+          width: 32px;
+          height: 32px;
         }
       }
     }
@@ -332,6 +342,22 @@
   /* 顧客推薦 */
   &__recommend {
     transform: translateY(-399px);
+    .inner{
+      &__list{
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include media-breakpoint-sm {
+          justify-content: center;
+        }
+      }
+      // &__item{
+      //   /* 後面才加上去，會在lg時就被設定 */
+      //   @include media-breakpoint-lg{
+      //     max-width: 48.2%;
+      //   }
+        
+      // }
+    }
   }
 
   /* 聯絡我們 */

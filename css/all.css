@@ -59,6 +59,10 @@ table {
   -webkit-box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0 auto;
   font-size: 16px;
@@ -128,6 +132,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   margin-right: 0.5rem;
 }
 
+.mr-2 {
+  margin-right: 1rem;
+}
+
+.mr-3 {
+  margin-right: 1.5rem;
+}
+
+.ml-5 {
+  margin-left: 3.75rem;
+}
+
 .mb-1 {
   margin-bottom: 0.5rem;
 }
@@ -167,6 +183,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   }
   .mb-md-5 {
     margin-bottom: 3.75rem;
+  }
+  .mx-md-0 {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -370,71 +390,25 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   }
 }
 
-.card__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-@media screen and (max-width: 576px) {
-  .card__list {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
-.card__item {
-  max-width: 23.5%;
-}
-
-@media screen and (max-width: 768px) {
-  .card__item {
-    max-width: 48.2%;
-    margin-bottom: 24px;
-    /* 雙欄排版 */
-    /* TODO:一種方式是:全部推擠後，最後整體容器減掉被推擠高度 */
-    /* 一種方式是:全部推擠後，最後一個與倒數第二個不推擠，但會遇到單數問題 */
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .card__item {
-    max-width: 93.8%;
-    margin-bottom: 16px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .card__item:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.card__item__body {
+.card__body {
   padding: 16px;
-  border-right: 1px solid #DEE2E6;
-  border-left: 1px solid #DEE2E6;
-  border-bottom: 1px solid #DEE2E6;
+  border-right: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
   background: white;
   color: #212529;
 }
 
-.card__item__body__title {
+.card__body__title {
   margin-bottom: 16px;
   font-weight: bolder;
 }
 
-.card__item__body__text {
+.card__body__text {
   margin-bottom: 16px;
 }
 
-.card__item__body__footer {
+.card__footer {
   color: #707070;
 }
 
@@ -553,7 +527,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   /* 區塊基礎設定 */
   padding: 64px 0px 80px 0px;
   /* 區塊標題 */
-  /* ul>li 結構最後一個 li 不往下推擠 */
+  /* inner預設設定 list、item、title、text、img */
   /* 各功能區塊設定 */
   /* 專業服務 */
   /* 經典鏡框 */
@@ -574,24 +548,33 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   }
 }
 
-.section__title {
-  margin-bottom: 60px;
+.section .inner__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section .inner__item {
+  /* 四欄 */
+  max-width: 23.5%;
 }
 
 @media screen and (max-width: 768px) {
-  .section__title {
-    margin-bottom: 32px;
+  .section .inner__item {
+    /* 雙欄 */
+    max-width: 48.2%;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .section__title {
-    margin-bottom: 16px;
+  .section .inner__item {
+    /* 單欄 */
+    max-width: 93.8%;
   }
 }
 
-.section .inner__list li:last-child {
-  margin-bottom: 0;
+.section__service {
+  /* 內容客製化 */
 }
 
 @media screen and (max-width: 576px) {
@@ -600,7 +583,23 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   }
 }
 
-.section__service .card__item {
+.section__service .inner__list {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 576px) {
+  .section__service .inner__list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.section__service .inner__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -615,27 +614,27 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 @media screen and (max-width: 768px) {
-  .section__service .card__item {
+  .section__service .inner__item {
     padding: 0 50px;
   }
-  .section__service .card__item:nth-child(1) {
+  .section__service .inner__item:nth-child(1) {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
   }
-  .section__service .card__item:nth-child(2) {
+  .section__service .inner__item:nth-child(2) {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
     margin-bottom: 50px;
   }
-  .section__service .card__item:nth-child(3) {
+  .section__service .inner__item:nth-child(3) {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
     margin-bottom: 50px;
   }
-  .section__service .card__item:nth-child(4) {
+  .section__service .inner__item:nth-child(4) {
     -webkit-box-ordinal-group: 5;
         -ms-flex-order: 4;
             order: 4;
@@ -643,67 +642,72 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 @media screen and (max-width: 576px) {
-  .section__service .card__item {
+  .section__service .inner__item {
     padding: 0 64px;
   }
 }
 
-.section__service .card__img {
+.section__service .inner__img {
   width: 100px;
   height: 100px;
   margin-bottom: 40px;
 }
 
-.section__classic .inner__list__item {
-  /* 調整文字位置 */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  /* 調整圖片大小位置 */
-  height: 320px;
-  margin-bottom: 32px;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-@media screen and (max-width: 1199px) {
-  .section__classic .inner__list__item {
-    height: 250px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .section__classic .inner__list__item {
-    height: 168px;
-    margin-bottom: 8px;
-  }
+.section__classic .inner__list {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 @media screen and (max-width: 576px) {
-  .section__classic .inner__list__item {
-    height: 134px;
-    color: white;
-    background-position: center;
-    margin-bottom: 8px;
+  .section__classic .inner__list {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
 }
 
+.section__classic .inner__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .section__classic .inner__item {
+    margin-bottom: 8px;
+  }
+}
+
 @media screen and (max-width: 576px) {
-  .section__classic .inner__list__item:nth-child(1) {
+  .section__classic .inner__item {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 134px;
+    color: white;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .section__classic .inner__item:nth-child(1) {
     background-image: url("../img/8.png");
   }
 }
 
-.section__classic .inner__list__item:nth-child(2) {
+.section__classic .inner__item:nth-child(2) {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
@@ -711,7 +715,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 @media screen and (max-width: 768px) {
-  .section__classic .inner__list__item:nth-child(2) {
+  .section__classic .inner__item:nth-child(2) {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -720,53 +724,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 @media screen and (max-width: 576px) {
-  .section__classic .inner__list__item:nth-child(2) {
+  .section__classic .inner__item:nth-child(2) {
     background-image: url("../img/15 2.png");
   }
 }
 
 @media screen and (max-width: 576px) {
-  .section__classic .inner__list__item:nth-child(3) {
+  .section__classic .inner__item:nth-child(3) {
     background-image: url("../img/28.png");
-  }
-}
-
-.section__classic .inner__list__item__text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-weight: bolder;
-  padding-left: 24px;
-  width: 40%;
-}
-
-@media screen and (max-width: 1199px) {
-  .section__classic .inner__list__item__text {
-    width: 34%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    font-size: 28px;
-    line-height: 42px;
-  }
-}
-
-.section__classic .inner__icon {
-  margin-right: 8px;
-  width: 48px;
-  height: 48px;
-}
-
-@media screen and (max-width: 768px) {
-  .section__classic .inner__icon {
-    width: 32px;
-    height: 32px;
   }
 }
 
@@ -777,6 +742,40 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 @media screen and (max-width: 576px) {
   .section__classic .inner__img {
     display: none;
+  }
+}
+
+.section__classic .inner__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bolder;
+  width: 40%;
+}
+
+@media screen and (max-width: 1199px) {
+  .section__classic .inner__text {
+    width: 34%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 28px;
+    line-height: 42px;
+  }
+}
+
+.section__classic .inner__icon {
+  width: 48px;
+  height: 48px;
+}
+
+@media screen and (max-width: 768px) {
+  .section__classic .inner__icon {
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -945,6 +944,22 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .section__recommend {
   -webkit-transform: translateY(-399px);
           transform: translateY(-399px);
+}
+
+.section__recommend .inner__list {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 576px) {
+  .section__recommend .inner__list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .section__contactUs {
