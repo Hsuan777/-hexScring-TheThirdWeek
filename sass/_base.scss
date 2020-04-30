@@ -28,33 +28,28 @@ a{
 
 h1, .h1 {
   font-size: 64px;
-  line-height: 96px;
 }
-
 h2, .h2 {
   font-size: 48px;  
-  line-height: 72px;
 }
 h3, .h3 {
   font-size: 36px;  
-  line-height: 54px;
 }
 h4, .h4 {
   font-size: 24px;  
-  line-height: 36px;
+}
+h1, .h1,h2, .h2,h3, .h3,h4, .h4{
+  line-height: 1.5;
 }
 @include media-breakpoint-md{
   h1, .h1{
     font-size: 48px;
-    line-height: 72px;
   }
   h2, .h2 {
     font-size: 32px;  
-    line-height: 48px;
   }
   h3, .h3, h4, .h4 {
     font-size: 20px;  
-    line-height: 30px;
   }
 }
 

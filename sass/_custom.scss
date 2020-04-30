@@ -76,6 +76,7 @@
     padding: 24px 0;
   }
   /* 區塊標題 */
+  // TODO: 依照 spacing級距縮放
   &__title {
     margin-bottom: 60px;
     @include media-breakpoint-md {
@@ -334,9 +335,9 @@
   }
 
   /* 聯絡我們 */
-  // &__contactUs {
-
-  // }
+  &__contactUs {
+    padding: 0 204px;
+  }
 }
 
 // .footer{
