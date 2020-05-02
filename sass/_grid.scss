@@ -1,0 +1,53 @@
+/* 主容器 */
+// TODO: 1540如何正確推擠出去
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  @include media-breakpoint-lg {
+    max-width: 1296px;
+    padding: 0 48px;
+  }
+  @include media-breakpoint-sm {
+    max-width: 1224px;
+    padding: 0 12px;
+  }
+  &__jointName {
+    max-width: 1540px;
+    margin-left: -170px;
+    margin-right: -170px;
+    margin: 0 auto;
+  }
+}
+
+/* 子容器 */
+// 數字比整數少，是因為可以在 flex下jcsb時，多欄分開
+
+// 四欄，外容器之23.5%寬
+.col-3 {
+  max-width: 23.5%;
+}
+
+// 三欄，外容器之32.33%寬
+.col-4 {
+  max-width: 33.33%;
+}
+
+// 兩欄，外容器之48%寬且永遠保持48%
+.col-6 {
+  max-width: 48%;
+}
+
+// 單欄或滿寬
+.col-12 {
+  max-width: 100%;
+}
+
+
+.col-md-6{
+  @include media-breakpoint-md {
+    max-width: 48.2%;
+  }
+  @include media-breakpoint-sm {
+    max-width: 100%;
+  }
+}

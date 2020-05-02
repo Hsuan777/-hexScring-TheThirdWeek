@@ -1,25 +1,6 @@
-// 通用類
-// TODO: 1540如何正確推擠出去
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  @include media-breakpoint-lg {
-    max-width: 1296px;
-    padding: 0 48px;
-  }
-  @include media-breakpoint-sm {
-    max-width: 1224px;
-    padding: 0 12px;
-  }
-  &__jointName {
-    max-width: 1540px;
-    margin-left: -170px;
-    margin-right: -170px;
-    margin: 0 auto;
-  }
-}
 
-/* 背景與顏色 */
+
+/* 背景與文字顏色 */
 @each $color, $value in ($color) {
   .bg-#{$color} {
     background-color: $value;
@@ -45,6 +26,10 @@
 .w-100 {
   width: 100%;
 }
+
+
+
+
 
 /* 框線參考用 */
 .border-white {
@@ -78,40 +63,25 @@
   @include media-breakpoint-sm {
     padding: 24px 0;
   }
-  /* 區塊標題 */
-  // 依照 spacing級距縮放，預設寫在標題上
-  // &__title {
-  //   margin-bottom: 60px;
-  //   @include media-breakpoint-md {
-  //     margin-bottom: 32px;
+  
+  
+  /* inner預設設定 list、item、title、text、img */
+  // .inner {
+  //   &__list {
+  //     display: flex;
   //   }
-  //   @include media-breakpoint-sm {
-  //     margin-bottom: 16px;
+  //   &__item {
+  //     // TODO:會遇上需要 max-width: 100%;的情況，在下面寫會變成整個覆蓋無法修改，得重新設定
+  //     max-width: 23.5%;
+  //     @include media-breakpoint-md {
+  //       max-width: 48.2%;
+  //     }
+  //     @include media-breakpoint-sm {
+  //       max-width: 100%;
+  //     }
+
   //   }
   // }
-  /* inner預設設定 list、item、title、text、img */
-  .inner {
-    &__list {
-      display: flex;
-    }
-    &__item {
-      // TODO:會遇上需要 max-width: 100%;的情況，在下面寫會變成整個覆蓋無法修改，得重新設定
-      /* 四欄 */
-      max-width: 23.5%;
-      
-      @include media-breakpoint-md {
-        /* 雙欄 */
-        max-width: 48.2%;
-       
-      }
-      @include media-breakpoint-sm {
-        /* 單欄 */
-        // max-width: 93.8%;
-        max-width: 100%;
-      }
-
-    }
-  }
 
   /* 各功能區塊設定 */
   /* 專業服務 */
@@ -119,9 +89,9 @@
     @include media-breakpoint-sm {
       padding-bottom: 56px;
     }
-    /* 內容客製化 */
     .inner {
       &__list {
+        display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         @include media-breakpoint-sm {
@@ -135,20 +105,6 @@
         padding: 0 37px;
         @include media-breakpoint-md {
           padding: 0 50px;
-          &:nth-child(1) {
-            order: 3;
-          }
-          &:nth-child(2) {
-            order: 1;
-            margin-bottom: 50px;
-          }
-          &:nth-child(3) {
-            order: 2;
-            margin-bottom: 50px;
-          }
-          &:nth-child(4) {
-            order: 4;
-          }
         }
         @include media-breakpoint-sm {
           padding: 0 64px;
@@ -160,26 +116,39 @@
         margin-bottom: 40px;
       }
     }
+    .col-md-6{
+      @include media-breakpoint-md {
+        &:nth-child(1) {
+          order: 3;
+        }
+        &:nth-child(2) {
+          order: 1;
+          margin-bottom: 50px;
+        }
+        &:nth-child(3) {
+          order: 2;
+          margin-bottom: 50px;
+        }
+        &:nth-child(4) {
+          order: 4;
+        }
+      }
+    }
   }
   /* 經典鏡框 */
   &__classic {
     .inner {
-      &__list {
-        justify-content: space-between;
-        flex-wrap: wrap;
-        @include media-breakpoint-sm {
-          justify-content: center;
-        }
-      }
+      // &__list {
+      //   justify-content: space-between;
+      //   flex-wrap: wrap;
+      //   @include media-breakpoint-sm {
+      //     justify-content: center;
+      //   }
+      // }
       &__item {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 100%;
-        @include media-breakpoint-md {
-          max-width: 100%;
-          margin-bottom: 8px;
-        }
         @include media-breakpoint-sm {
           justify-content: center;
           height: 134px;
