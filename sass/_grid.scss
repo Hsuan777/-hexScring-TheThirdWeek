@@ -1,5 +1,4 @@
 /* 主容器 */
-// TODO: 1540如何正確推擠出去
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -11,10 +10,15 @@
     max-width: 1224px;
     padding: 0 12px;
   }
+  /* 會向外延伸 */
   &__jointName {
     margin-left: -170px;
     margin-right: -170px;
-    margin: 0 auto;
+    @include media-breakpoint-lg {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
   }
 }
 

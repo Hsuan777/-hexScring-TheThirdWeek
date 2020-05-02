@@ -81,6 +81,9 @@
   @include media-breakpoint-sm {
     padding: 24px 0;
   }
+  &__title{
+    margin-bottom: 3.75rem;
+  }
 
   /* 專業服務 */
   &__service {
@@ -88,6 +91,7 @@
       padding-bottom: 56px;
     }
     .inner {
+      
       &__list {
         display: flex;
         justify-content: space-between;
@@ -184,15 +188,22 @@
 
   /* 聯名眼鏡 */
   &__jointName {
-    // background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
-    // background-size: cover;
-    // padding-bottom: 479px;
-    // transform: translateY(-399px);
+    background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
+    background-size: cover;
+    padding-bottom: 480px;
     .inner {
       &__mixed {
         display: flex;
         margin-bottom: 60px;
       }
+      // &__origin{
+      //   position: relative;
+      // }
+      // &__link{
+      //   position: absolute;
+      //   right: 0;
+      //   bottom: 0;
+      // }
       &__more {
         position: relative;
         width: 90%;
@@ -279,6 +290,7 @@
   }
   /* 顧客推薦 */
   &__recommend {
+    margin-top: -400px;
     .inner {
       &__list {
         display: flex;
