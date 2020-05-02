@@ -1,5 +1,3 @@
-
-
 /* 背景與文字顏色 */
 @each $color, $value in ($color) {
   .bg-#{$color} {
@@ -34,21 +32,19 @@
 .d-none {
   display: none;
 }
-@include media-breakpoint-md{
+@include media-breakpoint-md {
   .d-md-none {
     display: none;
   }
 }
-@include media-breakpoint-sm{
-  .d-sm-block{
+@include media-breakpoint-sm {
+  .d-sm-block {
     display: block;
   }
   .d-sm-none {
     display: none;
   }
 }
-
-
 
 /* 框線參考用 */
 .border-white {
@@ -57,7 +53,6 @@
 .border-dark {
   border: 5px solid black;
 }
-
 
 .logo {
   // TODO: 檢查是否需要寬高，或由圖片撐開
@@ -142,12 +137,12 @@
         }
         &:nth-child(2) {
           flex-direction: row-reverse;
-          .inner__text{
+          .inner__text {
             justify-content: flex-end;
           }
           @include media-breakpoint-md {
             flex-direction: row;
-            .inner__text{
+            .inner__text {
               justify-content: center;
             }
           }
@@ -179,8 +174,8 @@
           line-height: 42px;
         }
       }
-      .icon{
-        @include media-breakpoint-sm{
+      .icon {
+        @include media-breakpoint-sm {
           background-color: white;
         }
       }
@@ -305,25 +300,58 @@
     @include media-breakpoint-md {
       padding-bottom: 48px;
     }
-    .inner{
-      &__text{
+    .inner {
+      &__text {
         margin-bottom: 20px;
         @include media-breakpoint-md {
           font-size: 16px;
         }
       }
     }
-    .form{
-      &__input{
+    .form {
+      &__group {
+        label {
+          display: block;
+          cursor: pointer;
+        }
+      }
+      &__input {
         padding: 14px 16px;
         border: 1px solid #000;
-        background-color:transparent;
+        background-color: transparent;
+        &::placeholder {
+          font-size: 16px;
+          line-height: 1.5;
+        }
       }
     }
-    .checkbox{
-      border: 0;
+    .checkbox {
+      display: none;
+      &__label {
+        cursor: pointer;
+        &::before {
+          content: "\2714";
+          border: 1px solid #000;
+          border-radius: 10%;
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+          padding: 1px 0px 2px 4px;
+          margin-right: 4px;
+          color: transparent;
+         
+        }
+      }
+
+      &:checked {
+        + .checkbox__label::before {
+          top: 0;
+          background-color: #aa0601;
+          color: white;
+        }
+      }
     }
-    .btn{
+    .btn {
       margin-top: 42px;
       padding: 16px 58px;
       cursor: pointer;
@@ -331,27 +359,27 @@
   }
 }
 
-.footer{
+.footer {
   font-weight: normal;
   padding-bottom: 24px;
-  .navbar{
+  .navbar {
     justify-content: space-between;
-    padding : 32px 0; 
-    &__list{
+    padding: 32px 0;
+    &__list {
       width: 486px;
     }
   }
-  @include media-breakpoint-sm{
-    .navbar{
+  @include media-breakpoint-sm {
+    .navbar {
       align-items: start;
       padding: 24px 0;
     }
-    .copyright{
+    .copyright {
       display: block;
       position: relative;
-      &::before{
+      &::before {
         position: absolute;
-        content: '';
+        content: "";
         width: 48px;
         height: 28px;
         background-image: url("../img/logo-new_工作區域 1@2x.png");
@@ -364,23 +392,23 @@
   }
 }
 
-.custom__bg{
+.custom__bg {
   background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
   background-size: cover;
   background-position-y: 200px;
   position: relative;
   z-index: 0;
-    &::before{
-      position: absolute;
-      content: '';
-      width: 100%;
-      height: 324px;
-      background:white;
-      bottom:0;
-      left: 0;
-      z-index: -1;
-      @include media-breakpoint-sm{
-        height: 2292px;
-      }
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 324px;
+    background: white;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    @include media-breakpoint-sm {
+      height: 2292px;
     }
+  }
 }
