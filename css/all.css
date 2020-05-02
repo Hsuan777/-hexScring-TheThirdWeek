@@ -101,6 +101,7 @@ h4, .h4 {
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   line-height: 1.5;
+  font-weight: bolder;
 }
 
 @media screen and (max-width: 768px) {
@@ -127,6 +128,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   }
 }
 
+hr {
+  margin: 0;
+}
+
 /* 主容器 */
 .container {
   max-width: 1200px;
@@ -148,7 +153,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 .container__jointName {
-  max-width: 1540px;
   margin-left: -170px;
   margin-right: -170px;
   margin: 0 auto;
@@ -167,6 +171,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   max-width: 48%;
 }
 
+.col-8 {
+  max-width: 66%;
+}
+
 .col-12 {
   max-width: 100%;
 }
@@ -183,7 +191,21 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .col-sm-100 {
+    max-width: 100%;
+  }
+}
+
 /* spacing */
+.px-3 {
+  padding: 0 1.5rem;
+}
+
+.py-4 {
+  padding: 2rem 0;
+}
+
 .mr-1 {
   margin-right: 0.5rem;
 }
@@ -237,6 +259,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 @media screen and (max-width: 768px) {
+  .mr-md-3 {
+    margin-right: 1.5rem;
+  }
   .mb-md-1 {
     margin-bottom: 0.5rem;
   }
@@ -259,6 +284,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 @media screen and (max-width: 576px) {
+  .py-sm-3 {
+    padding: 0 1.5rem;
+  }
+  .px-sm-0 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .mr-sm-3 {
+    margin-right: 1.5rem;
+  }
   .mb-sm-1 {
     margin-bottom: 0.5rem;
   }
@@ -278,10 +313,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     margin-left: 0;
     margin-right: 0;
   }
-}
-
-.px-3 {
-  padding: 0 1.5rem;
 }
 
 /* flex */
@@ -343,6 +374,54 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+}
+
+/* order */
+.order-1 {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.order-2 {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.order-3 {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+.order-4 {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+}
+
+@media screen and (max-width: 768px) {
+  .order-md-1 {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .order-md-2 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .order-md-3 {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .order-md-4 {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
 }
 
 .banner {
@@ -550,9 +629,37 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   width: 100%;
 }
 
+/* display */
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .d-md-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .d-sm-block {
+    display: block;
+  }
+  .d-sm-none {
+    display: none;
+  }
+}
+
 /* 框線參考用 */
 .border-white {
   border: 1px solid #fff;
+}
+
+.border-dark {
+  border: 5px solid black;
 }
 
 .logo {
@@ -588,8 +695,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .section {
   /* 區塊基礎設定 */
   padding: 64px 0px 80px 0px;
-  /* inner預設設定 list、item、title、text、img */
-  /* 各功能區塊設定 */
   /* 專業服務 */
   /* 經典鏡框 */
   /* 聯名眼鏡 */
@@ -664,31 +769,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   width: 100px;
   height: 100px;
   margin-bottom: 40px;
-}
-
-@media screen and (max-width: 768px) {
-  .section__service .col-md-6:nth-child(1) {
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
-  }
-  .section__service .col-md-6:nth-child(2) {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-    margin-bottom: 50px;
-  }
-  .section__service .col-md-6:nth-child(3) {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-    margin-bottom: 50px;
-  }
-  .section__service .col-md-6:nth-child(4) {
-    -webkit-box-ordinal-group: 5;
-        -ms-flex-order: 4;
-            order: 4;
-  }
 }
 
 .section__classic .inner__item {
@@ -793,6 +873,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .section__classic .inner .icon {
+    background-color: white;
+  }
+}
+
 .section__jointName .inner__mixed {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -863,6 +949,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 .section__jointName .inner__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -887,7 +976,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   font-size: 72px;
   line-height: 1.5;
   position: relative;
-  max-width: 100%;
 }
 
 .section__jointName .inner__item::before {
@@ -909,21 +997,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   white-space: nowrap;
 }
 
-@media screen and (max-width: 1199px) {
-  .section__jointName .inner__text {
-    font-size: 48px;
-    line-height: 43px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .section__jointName .inner__text {
-    font-size: 32px;
-    line-height: 43px;
-  }
-}
-
 .section__recommend .inner__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -943,26 +1020,42 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   padding-bottom: 92px;
 }
 
-.section__contactUs .inner {
-  max-width: 66%;
-  margin: 0 auto;
+@media screen and (max-width: 768px) {
+  .section__contactUs {
+    padding-bottom: 56px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section__contactUs {
+    padding-bottom: 48px;
+  }
 }
 
 .section__contactUs .inner__text {
   margin-bottom: 20px;
 }
 
-.section__contactUs .inner .form {
-  margin-bottom: 42px;
+@media screen and (max-width: 768px) {
+  .section__contactUs .inner__text {
+    font-size: 16px;
+  }
 }
 
-.section__contactUs .inner .form__input {
+.section__contactUs .form__input {
   padding: 14px 16px;
+  border: 1px solid #000;
+  background-color: transparent;
 }
 
-.section__contactUs .inner .btn {
+.section__contactUs .checkbox {
+  border: 0;
+}
+
+.section__contactUs .btn {
   margin-top: 42px;
   padding: 16px 58px;
+  cursor: pointer;
 }
 
 .footer {
@@ -971,11 +1064,38 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 .footer .navbar {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 32px 0;
 }
 
 .footer .navbar__list {
   width: 486px;
+}
+
+@media screen and (max-width: 576px) {
+  .footer .navbar {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    padding: 24px 0;
+  }
+  .footer .copyright {
+    display: block;
+    position: relative;
+  }
+  .footer .copyright::before {
+    position: absolute;
+    content: '';
+    width: 48px;
+    height: 28px;
+    background-image: url("../img/logo-new_工作區域 1@2x.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 .custom__bg {
@@ -990,10 +1110,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   position: absolute;
   content: '';
   width: 100%;
-  height: 306px;
+  height: 324px;
   background: white;
   bottom: 0;
   left: 0;
   z-index: -1;
+}
+
+@media screen and (max-width: 576px) {
+  .custom__bg::before {
+    height: 2292px;
+  }
 }
 /*# sourceMappingURL=all.css.map */

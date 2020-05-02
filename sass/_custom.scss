@@ -27,7 +27,26 @@
   width: 100%;
 }
 
-
+/* display */
+.d-block {
+  display: block;
+}
+.d-none {
+  display: none;
+}
+@include media-breakpoint-md{
+  .d-md-none {
+    display: none;
+  }
+}
+@include media-breakpoint-sm{
+  .d-sm-block{
+    display: block;
+  }
+  .d-sm-none {
+    display: none;
+  }
+}
 
 
 
@@ -35,6 +54,10 @@
 .border-white {
   border: 1px solid #fff;
 }
+.border-dark {
+  border: 5px solid black;
+}
+
 
 .logo {
   // TODO: 檢查是否需要寬高，或由圖片撐開
@@ -63,27 +86,7 @@
   @include media-breakpoint-sm {
     padding: 24px 0;
   }
-  
-  
-  /* inner預設設定 list、item、title、text、img */
-  // .inner {
-  //   &__list {
-  //     display: flex;
-  //   }
-  //   &__item {
-  //     // TODO:會遇上需要 max-width: 100%;的情況，在下面寫會變成整個覆蓋無法修改，得重新設定
-  //     max-width: 23.5%;
-  //     @include media-breakpoint-md {
-  //       max-width: 48.2%;
-  //     }
-  //     @include media-breakpoint-sm {
-  //       max-width: 100%;
-  //     }
 
-  //   }
-  // }
-
-  /* 各功能區塊設定 */
   /* 專業服務 */
   &__service {
     @include media-breakpoint-sm {
@@ -116,35 +119,10 @@
         margin-bottom: 40px;
       }
     }
-    .col-md-6{
-      @include media-breakpoint-md {
-        &:nth-child(1) {
-          order: 3;
-        }
-        &:nth-child(2) {
-          order: 1;
-          margin-bottom: 50px;
-        }
-        &:nth-child(3) {
-          order: 2;
-          margin-bottom: 50px;
-        }
-        &:nth-child(4) {
-          order: 4;
-        }
-      }
-    }
   }
   /* 經典鏡框 */
   &__classic {
     .inner {
-      // &__list {
-      //   justify-content: space-between;
-      //   flex-wrap: wrap;
-      //   @include media-breakpoint-sm {
-      //     justify-content: center;
-      //   }
-      // }
       &__item {
         display: flex;
         justify-content: space-between;
@@ -199,6 +177,11 @@
           justify-content: center;
           font-size: 28px;
           line-height: 42px;
+        }
+      }
+      .icon{
+        @include media-breakpoint-sm{
+          background-color: white;
         }
       }
     }
@@ -265,6 +248,7 @@
         }
       }
       &__list {
+        display: flex;
         justify-content: space-between;
         @include media-breakpoint-sm {
           flex-direction: column;
@@ -279,7 +263,6 @@
         font-size: 72px;
         line-height: 1.5;
         position: relative;
-        max-width: 100%;
         &::before {
           position: absolute;
           content: "";
@@ -289,16 +272,6 @@
           left: 0;
           background-color: rgba(white, $alpha: 0.5);
         }
-        // &:nth-child(1) {
-        //   margin-right: 30px;
-        //   @include media-breakpoint-md {
-        //     margin-right: 24px;
-        //   }
-        //   @include media-breakpoint-sm {
-        //     margin-right: 0px;
-        //     margin-bottom: 20px;
-        //   }
-        // }
       }
       &__text {
         position: absolute;
@@ -306,14 +279,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         white-space: nowrap;
-        @include media-breakpoint-lg {
-          font-size: 48px;
-          line-height: 43px;
-        }
-        @include media-breakpoint-md {
-          font-size: 32px;
-          line-height: 43px;
-        }
       }
     }
   }
@@ -321,6 +286,7 @@
   &__recommend {
     .inner {
       &__list {
+        display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         @include media-breakpoint-sm {
@@ -333,23 +299,34 @@
   /* 聯絡我們 */
   &__contactUs {
     padding-bottom: 92px;
-    
+    @include media-breakpoint-md {
+      padding-bottom: 56px;
+    }
+    @include media-breakpoint-md {
+      padding-bottom: 48px;
+    }
     .inner{
-      max-width: 66%;
-      margin: 0 auto;
       &__text{
         margin-bottom: 20px;
-      }
-      .form{
-        margin-bottom: 42px;
-        &__input{
-          padding: 14px 16px;
+        @include media-breakpoint-md {
+          font-size: 16px;
         }
       }
-      .btn{
-        margin-top: 42px;
-        padding: 16px 58px;
+    }
+    .form{
+      &__input{
+        padding: 14px 16px;
+        border: 1px solid #000;
+        background-color:transparent;
       }
+    }
+    .checkbox{
+      border: 0;
+    }
+    .btn{
+      margin-top: 42px;
+      padding: 16px 58px;
+      cursor: pointer;
     }
   }
 }
@@ -358,9 +335,31 @@
   font-weight: normal;
   padding-bottom: 24px;
   .navbar{
+    justify-content: space-between;
     padding : 32px 0; 
     &__list{
       width: 486px;
+    }
+  }
+  @include media-breakpoint-sm{
+    .navbar{
+      align-items: start;
+      padding: 24px 0;
+    }
+    .copyright{
+      display: block;
+      position: relative;
+      &::before{
+        position: absolute;
+        content: '';
+        width: 48px;
+        height: 28px;
+        background-image: url("../img/logo-new_工作區域 1@2x.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        right: 0;
+        bottom: 0;
+      }
     }
   }
 }
@@ -375,10 +374,13 @@
       position: absolute;
       content: '';
       width: 100%;
-      height: 306px;
+      height: 324px;
       background:white;
       bottom:0;
       left: 0;
       z-index: -1;
+      @include media-breakpoint-sm{
+        height: 2292px;
+      }
     }
 }

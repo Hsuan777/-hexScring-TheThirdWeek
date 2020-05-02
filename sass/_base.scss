@@ -42,6 +42,7 @@ h4, .h4 {
 }
 h1, .h1,h2, .h2,h3, .h3,h4, .h4{
   line-height: 1.5;
+  font-weight: bolder;
 }
 @include media-breakpoint-md{
   h1, .h1{
@@ -69,3 +70,6 @@ h1, .h1,h2, .h2,h3, .h3,h4, .h4{
   }
 }
 
+hr{
+  margin: 0;
+}

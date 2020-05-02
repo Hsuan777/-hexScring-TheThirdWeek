@@ -12,7 +12,6 @@
     padding: 0 12px;
   }
   &__jointName {
-    max-width: 1540px;
     margin-left: -170px;
     margin-right: -170px;
     margin: 0 auto;
@@ -36,6 +35,9 @@
 .col-6 {
   max-width: 48%;
 }
+.col-8{
+  max-width: 66%;
+}
 
 // 單欄或滿寬
 .col-12 {
@@ -47,6 +49,11 @@
   @include media-breakpoint-md {
     max-width: 48.2%;
   }
+  @include media-breakpoint-sm {
+    max-width: 100%;
+  }
+}
+.col-sm-100{
   @include media-breakpoint-sm {
     max-width: 100%;
   }
