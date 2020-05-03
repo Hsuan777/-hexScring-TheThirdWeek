@@ -23,25 +23,48 @@
 }
 
 /* 子容器 */
-// 數字比整數少，是因為可以在 flex下jcsb時，多欄分開
+// 數字比整數少，是因為可以在 flex下jcsb時，多欄分開，但這後續有問題，78px左右推擠12px
+
+
+.col-1{
+  max-width: 8%;
+}
+.col-2{
+  max-width: 16%;
+}
+// 三欄，外容器之32.33%寬
+.col-4 {
+  max-width: 32%;
+}
+.col-5{
+  max-width: 40%;
+}
+.col-7{
+  max-width: 56%;
+}
+
+.col-8{
+  max-width: 64%;
+}
+.col-9{
+  max-width: 72%;
+}
+.col-10{
+  max-width: 80%;
+}
+.col-11{
+  max-width: 88%;
+}
 
 // 四欄，外容器之23.5%寬
 .col-3 {
   max-width: 23.5%;
 }
-
-// 三欄，外容器之32.33%寬
-.col-4 {
-  max-width: 33.33%;
-}
-
 // 兩欄，外容器之48%寬且永遠保持48%
 .col-6 {
   max-width: 48%;
 }
-.col-8{
-  max-width: 66%;
-}
+
 
 // 單欄或滿寬
 .col-12 {

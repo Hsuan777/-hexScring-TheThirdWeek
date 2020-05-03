@@ -5,6 +5,9 @@
 .flex-wrap {
   flex-wrap: wrap;
 }
+.flex-grow-0{
+  flex-grow: 0;
+}
 .flex-direction--column {
   flex-direction: column;
 }
@@ -43,4 +46,10 @@
     }
   }
 
+}
+
+@include media-breakpoint-sm{
+  .flex-sm-wrap{
+    flex-wrap: wrap;
+  }
 }

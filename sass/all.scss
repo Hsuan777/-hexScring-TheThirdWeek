@@ -3,6 +3,9 @@
 @import "mixin";
 @import "base";
 
+// Project
+@import "custom";
+
 @import "grid";
 @import "spacing";
 @import "flex";
@@ -11,7 +14,6 @@
 @import "navbar";
 @import "card";
 
-// Project
-@import "custom";
+
 
 

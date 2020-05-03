@@ -55,7 +55,7 @@
 }
 
 .logo {
-  // TODO: 檢查是否需要寬高，或由圖片撐開
+  
   @include hidden-text(80px, 49px, url("../img/logo-new_工作區域 1.png"));
   @include media-breakpoint-sm {
     width: 48px;
@@ -191,47 +191,105 @@
     background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
     background-size: cover;
     padding-bottom: 480px;
+    
     .inner {
       &__mixed {
         display: flex;
-        margin-bottom: 60px;
+        margin-bottom: 3.75rem;
+        margin-right: -170px;
+        margin-left: -170px;
+        // max-width: 1540px;
+        @include media-breakpoint-lg{
+          margin-right: 0px;
+          margin-left: 0px;
+        }
+        > li{
+          // 左欄
+          &:first-child{
+            max-width: 37%;
+            @include media-breakpoint-sm{
+              max-width: 47.7%;
+            }
+          }
+          // 右欄
+          &:last-child{
+            max-width: 62%;
+            // @include media-breakpoint-lg{
+            //   max-width: 54%;
+            // }
+            @include media-breakpoint-md{
+              margin-bottom: 0;
+            }
+            @include media-breakpoint-sm{
+              max-width: 51.7%;
+
+            }
+          }
+        }
+        &__secondary{
+          > li{
+            // 眼鏡哥
+            &:first-child{
+              max-width: 15%;
+              @include media-breakpoint-lg{
+                max-width: 14%;
+              }
+              @include media-breakpoint-sm{
+                max-width: 19%;
+              }
+            }
+            &:last-child{
+              max-width: 85%;
+              @include media-breakpoint-lg{
+                justify-content: start;
+              }
+              @include media-breakpoint-sm{
+                justify-content: center;
+                align-items: start;
+              }
+            }
+          }
+        }
+        
       }
-      // &__origin{
-      //   position: relative;
-      // }
-      // &__link{
-      //   position: absolute;
-      //   right: 0;
-      //   bottom: 0;
-      // }
+      
       &__more {
         position: relative;
-        width: 90%;
-        padding: 24px 0 24px 32px;
-        font-size: 72px;
-        line-height: 1.5;
-        background-image: url("../img/5.png");
-        background-position: 45%;
-        background-repeat: no-repeat;
+        display: block; 
+        margin-right: 84px;
+        max-width: 35%;
         &--hover {
-          margin-left: 8px;
+          margin-left: 10px;
           transition: 0.5s;
+          @include media-breakpoint-lg{
+            width: 27px;
+            height: 27px;
+          }
         }
-        &::before {
-          position: absolute;
-          content: "MORE";
-          top: 24px;
-          left: 88px;
-          transition: 0.3s;
-          z-index: 9;
+        @include media-breakpoint-lg{
+          // width: 147px;          
+          
         }
-        &::after {
-          position: absolute;
-          content: "MORE";
-          top: 24px;
-          left: 88px;
-          transition: 0.65s;
+        @include media-breakpoint-sm{
+          align-items: start;
+
+          
         }
+        // &::before {
+        //   position: absolute;
+        //   content: "MORE";
+        //   top: 24px;
+        //   left: 88px;
+        //   transition: 0.3s;
+        //   z-index: 9;
+        // }
+        // &::after {
+        //   position: absolute;
+        //   content: "MORE";
+        //   top: 24px;
+        //   left: 88px;
+        //   transition: 0.65s;
+        // }
         &:hover {
           &::before {
             font-size: 64px;
@@ -248,10 +306,26 @@
           }
         }
         &__text {
-          transform: translateX(10%);
-          padding: 0 67px 0px 24px;
+          position: absolute;
+          font-size: 72px;
+          line-height: 1.5;
+          top: 50%;
+          left: 26px;
+          transform: translateY(-50%);
+          padding: 0 67px 0 32px;
           background-color: #fff;
+          @include media-breakpoint-lg{
+            font-size: 40px;
+            padding: 0 35px 0 19px;
+            left: 10px;
+          }
+          @include media-breakpoint-md{
+            font-size: 26px;
+            padding: 0 13px 0 8px;
+            left: 5px;
+          }
         }
+        
       }
       &__list {
         display: flex;

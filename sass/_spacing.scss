@@ -49,6 +49,9 @@
     margin-left: 0;
     margin-right: 0;
   }
+  .mb-sm-0{
+    margin-bottom: 0;
+  }
   @for $i from 1 through 5{
     .pt-md-#{$i}{
       padding-top:0.5rem*$i;
@@ -89,6 +92,7 @@
     margin-left: 0;
     margin-right: 0;
   }
+  
   @for $i from 1 through 5{
     .pt-sm-#{$i}{
       padding-top:0.5rem*$i;
