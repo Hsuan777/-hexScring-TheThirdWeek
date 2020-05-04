@@ -55,7 +55,6 @@
 }
 
 .logo {
-  
   @include hidden-text(80px, 49px, url("../img/logo-new_工作區域 1.png"));
   @include media-breakpoint-sm {
     width: 48px;
@@ -81,7 +80,7 @@
   @include media-breakpoint-sm {
     padding: 24px 0;
   }
-  &__title{
+  &__title {
     margin-bottom: 3.75rem;
   }
 
@@ -91,7 +90,6 @@
       padding-bottom: 56px;
     }
     .inner {
-      
       &__list {
         display: flex;
         justify-content: space-between;
@@ -191,174 +189,213 @@
     background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
     background-size: cover;
     padding-bottom: 480px;
-    
+
     .inner {
       &__mixed {
+        // 1540 -> 677 -> 333
         display: flex;
+        justify-content: center;
         margin-bottom: 3.75rem;
-        margin-right: -170px;
-        margin-left: -170px;
-        // max-width: 1540px;
-        @include media-breakpoint-lg{
-          margin-right: 0px;
-          margin-left: 0px;
-        }
-        > li{
+
+        > li {
           // 左欄
-          &:first-child{
-            max-width: 37%;
-            @include media-breakpoint-sm{
-              max-width: 47.7%;
+          &:first-child {
+            max-width: 37.2%;
+            @include media-breakpoint-sm {
+              max-width: 46.84%;
             }
           }
           // 右欄
-          &:last-child{
-            max-width: 62%;
+          &:last-child {
+            max-width: 62.2%;
             // @include media-breakpoint-lg{
-            //   max-width: 54%;
+
             // }
-            @include media-breakpoint-md{
+            @include media-breakpoint-md {
+              max-width: 61.74%;
               margin-bottom: 0;
             }
-            @include media-breakpoint-sm{
-              max-width: 51.7%;
-
+            @include media-breakpoint-sm {
+              max-width: 50%;
             }
           }
         }
-        &__secondary{
-          > li{
+        &__secondary {
+          > li {
             // 眼鏡哥
-            &:first-child{
-              max-width: 15%;
-              @include media-breakpoint-lg{
-                max-width: 14%;
-              }
-              @include media-breakpoint-sm{
+            &:first-child {
+              max-width: 13.77%;
+
+              @include media-breakpoint-sm {
                 max-width: 19%;
               }
             }
-            &:last-child{
-              max-width: 85%;
-              @include media-breakpoint-lg{
+            &:last-child {
+              max-width: 85.38%;
+              @include media-breakpoint-lg {
                 justify-content: start;
               }
-              @include media-breakpoint-sm{
+              @include media-breakpoint-sm {
                 justify-content: center;
                 align-items: start;
               }
             }
           }
         }
-        
       }
-      
+
       &__more {
         position: relative;
-        display: block; 
-        margin-right: 84px;
-        max-width: 35%;
-        &--hover {
-          margin-left: 10px;
-          transition: 0.5s;
-          @include media-breakpoint-lg{
-            width: 27px;
-            height: 27px;
-          }
+        display: block;
+        margin-right: 150px;
+        max-width: 31.66%;
+        @include media-breakpoint-lg {
+          margin-right: 100px;
         }
-        @include media-breakpoint-lg{
-          // width: 147px;          
-          
+        @include media-breakpoint-md {
+          margin-right: 80px;
         }
-        @include media-breakpoint-sm{
+        @include media-breakpoint-sm {
           align-items: start;
+          margin-right: 0px;
+          max-width: 60%;
+        }
+        &:hover {
+          .inner__more--imgHover {
+            transform: translateX(15px);
+          }
+          .inner__more--textHover {
+            &::before {
+              font-size: 64px;
+              opacity: 0.7;
+              transform: translateY(-60px);
+              @include media-breakpoint-lg {
+                font-size: 30px;
+                transform: translateY(-50px);
+              }
+              @include media-breakpoint-md {
+                font-size: 16px;
+                transform: translateY(-50px);
 
+              }
+            }
+            &::after {
+              font-size: 48px;
+              opacity: 0.4;
+              transform: translateY(-90px);
+              @include media-breakpoint-lg {
+                font-size: 20px;
+                transform: translateY(-80px);
+              }
+              @include media-breakpoint-md {
+                font-size: 8px;
+                transform: translateY(-50px);
+
+              }
+            }
+          }
+        }
+        &__secondary {
+          position: absolute;
+          top: 50%;
+          right: -84px;
+          transform: translateY(-50%);
+          @include media-breakpoint-lg {
+            right: -50px;
+          }
           
         }
-        // &::before {
-        //   position: absolute;
-        //   content: "MORE";
-        //   top: 24px;
-        //   left: 88px;
-        //   transition: 0.3s;
-        //   z-index: 9;
-        // }
-        // &::after {
-        //   position: absolute;
-        //   content: "MORE";
-        //   top: 24px;
-        //   left: 88px;
-        //   transition: 0.65s;
-        // }
-        &:hover {
-          &::before {
-            font-size: 64px;
-            opacity: 0.7;
-            transform: translateY(-50px);
-          }
-          &::after {
-            font-size: 48px;
-            opacity: 0.4;
-            transform: translateY(-80px);
-          }
-          .inner__more--hover {
-            transform: translateX(25px);
-          }
-        }
+
         &__text {
-          position: absolute;
+          position: relative;
           font-size: 72px;
           line-height: 1.5;
-          top: 50%;
-          left: 26px;
-          transform: translateY(-50%);
-          padding: 0 67px 0 32px;
+          padding: 0 19px 0 32px;
           background-color: #fff;
-          @include media-breakpoint-lg{
+          @include media-breakpoint-lg {
             font-size: 40px;
-            padding: 0 35px 0 19px;
-            left: 10px;
+            padding: 0 19px 0 19px;
           }
-          @include media-breakpoint-md{
+          @include media-breakpoint-md {
             font-size: 26px;
-            padding: 0 13px 0 8px;
-            left: 5px;
+          }
+          @include media-breakpoint-sm {
+            padding: 0 12px 0 14px;
+          }
+          
+        }
+        &--textHover {
+          &::before,
+          &::after {
+            position: absolute;
+            content: "MORE";
+            font-size: 72px;
+            top: 0;
+            left: 32px;
+            transition: 0.3s;
+            z-index: 9;
+            @include media-breakpoint-lg {
+              font-size: 40px;
+              left: 19px;
+            }
+            @include media-breakpoint-md {
+              font-size: 26px;
+            }
+            @include media-breakpoint-sm {
+              left: 14px;
+              right: -55px;
+            }
+          }
+          &::after {
+            transition: 0.65s;
           }
         }
-        
+        &--imgHover {
+          margin-left: 17px;
+          transition: 0.5s;
+          @include media-breakpoint-lg {
+            width: 27px;
+            height: 27px;
+            margin-left: 10px;
+          }
+          @include media-breakpoint-sm {
+            width: 18px;
+            height: 18px;
+          }
+        }
       }
-      &__list {
+      &__brand {
         display: flex;
         justify-content: space-between;
         @include media-breakpoint-sm {
           flex-direction: column;
           align-items: center;
         }
-      }
-      &__item {
-        /* 若使用 df去做置中，圖片+文字會造成高度不正確 */
-        /* 而圖片會自動撐開高度 */
-        /* 所以讓文字以定位方式置中，就無需使用 flex*/
-        // max-width: 100%;
-        font-size: 72px;
-        line-height: 1.5;
-        position: relative;
-        &::before {
-          position: absolute;
-          content: "";
-          top: 0;
-          bottom: 0;
-          right: 0;
-          left: 0;
-          background-color: rgba(white, $alpha: 0.5);
+        &__item {
+          /* 若使用 df去做置中，圖片+文字會造成高度不正確 */
+          /* 而圖片會自動撐開高度 */
+          /* 所以讓文字以定位方式置中，就無需使用 flex*/
+          // max-width: 100%;
+          font-size: 72px;
+          line-height: 1.5;
+          position: relative;
+          &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(white, $alpha: 0.5);
+          }
         }
-      }
-      &__text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        white-space: nowrap;
+        &__text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          white-space: nowrap;
+        }
       }
     }
   }
@@ -425,7 +462,6 @@
           padding: 1px 0px 2px 4px;
           margin-right: 4px;
           color: transparent;
-         
         }
       }
 

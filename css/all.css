@@ -458,52 +458,41 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 3.75rem;
-  margin-right: -170px;
-  margin-left: -170px;
-}
-
-@media screen and (max-width: 1199px) {
-  .section__jointName .inner__mixed {
-    margin-right: 0px;
-    margin-left: 0px;
-  }
 }
 
 .section__jointName .inner__mixed > li:first-child {
-  max-width: 37%;
+  max-width: 37.2%;
 }
 
 @media screen and (max-width: 576px) {
   .section__jointName .inner__mixed > li:first-child {
-    max-width: 47.7%;
+    max-width: 46.84%;
   }
 }
 
 .section__jointName .inner__mixed > li:last-child {
-  max-width: 62%;
+  max-width: 62.2%;
 }
 
 @media screen and (max-width: 768px) {
   .section__jointName .inner__mixed > li:last-child {
+    max-width: 61.74%;
     margin-bottom: 0;
   }
 }
 
 @media screen and (max-width: 576px) {
   .section__jointName .inner__mixed > li:last-child {
-    max-width: 51.7%;
+    max-width: 50%;
   }
 }
 
 .section__jointName .inner__mixed__secondary > li:first-child {
-  max-width: 15%;
-}
-
-@media screen and (max-width: 1199px) {
-  .section__jointName .inner__mixed__secondary > li:first-child {
-    max-width: 14%;
-  }
+  max-width: 13.77%;
 }
 
 @media screen and (max-width: 576px) {
@@ -513,7 +502,7 @@ hr {
 }
 
 .section__jointName .inner__mixed__secondary > li:last-child {
-  max-width: 85%;
+  max-width: 85.38%;
 }
 
 @media screen and (max-width: 1199px) {
@@ -538,20 +527,19 @@ hr {
 .section__jointName .inner__more {
   position: relative;
   display: block;
-  margin-right: 84px;
-  max-width: 35%;
-}
-
-.section__jointName .inner__more--hover {
-  margin-left: 10px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  margin-right: 150px;
+  max-width: 31.66%;
 }
 
 @media screen and (max-width: 1199px) {
-  .section__jointName .inner__more--hover {
-    width: 27px;
-    height: 27px;
+  .section__jointName .inner__more {
+    margin-right: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section__jointName .inner__more {
+    margin-right: 80px;
   }
 }
 
@@ -560,57 +548,161 @@ hr {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
+    margin-right: 0px;
+    max-width: 60%;
   }
 }
 
-.section__jointName .inner__more:hover::before {
+.section__jointName .inner__more:hover .inner__more--imgHover {
+  -webkit-transform: translateX(15px);
+          transform: translateX(15px);
+}
+
+.section__jointName .inner__more:hover .inner__more--textHover::before {
   font-size: 64px;
   opacity: 0.7;
-  -webkit-transform: translateY(-50px);
-          transform: translateY(-50px);
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
 }
 
-.section__jointName .inner__more:hover::after {
+@media screen and (max-width: 1199px) {
+  .section__jointName .inner__more:hover .inner__more--textHover::before {
+    font-size: 30px;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section__jointName .inner__more:hover .inner__more--textHover::before {
+    font-size: 16px;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+}
+
+.section__jointName .inner__more:hover .inner__more--textHover::after {
   font-size: 48px;
   opacity: 0.4;
-  -webkit-transform: translateY(-80px);
-          transform: translateY(-80px);
+  -webkit-transform: translateY(-90px);
+          transform: translateY(-90px);
 }
 
-.section__jointName .inner__more:hover .inner__more--hover {
-  -webkit-transform: translateX(25px);
-          transform: translateX(25px);
+@media screen and (max-width: 1199px) {
+  .section__jointName .inner__more:hover .inner__more--textHover::after {
+    font-size: 20px;
+    -webkit-transform: translateY(-80px);
+            transform: translateY(-80px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section__jointName .inner__more:hover .inner__more--textHover::after {
+    font-size: 8px;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+}
+
+.section__jointName .inner__more__secondary {
+  position: absolute;
+  top: 50%;
+  right: -84px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1199px) {
+  .section__jointName .inner__more__secondary {
+    right: -50px;
+  }
 }
 
 .section__jointName .inner__more__text {
-  position: absolute;
+  position: relative;
   font-size: 72px;
   line-height: 1.5;
-  top: 50%;
-  left: 26px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  padding: 0 67px 0 32px;
+  padding: 0 19px 0 32px;
   background-color: #fff;
 }
 
 @media screen and (max-width: 1199px) {
   .section__jointName .inner__more__text {
     font-size: 40px;
-    padding: 0 35px 0 19px;
-    left: 10px;
+    padding: 0 19px 0 19px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .section__jointName .inner__more__text {
     font-size: 26px;
-    padding: 0 13px 0 8px;
-    left: 5px;
   }
 }
 
-.section__jointName .inner__list {
+@media screen and (max-width: 576px) {
+  .section__jointName .inner__more__text {
+    padding: 0 12px 0 14px;
+  }
+}
+
+.section__jointName .inner__more--textHover::before, .section__jointName .inner__more--textHover::after {
+  position: absolute;
+  content: "MORE";
+  font-size: 72px;
+  top: 0;
+  left: 32px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 9;
+}
+
+@media screen and (max-width: 1199px) {
+  .section__jointName .inner__more--textHover::before, .section__jointName .inner__more--textHover::after {
+    font-size: 40px;
+    left: 19px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section__jointName .inner__more--textHover::before, .section__jointName .inner__more--textHover::after {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .section__jointName .inner__more--textHover::before, .section__jointName .inner__more--textHover::after {
+    left: 14px;
+    right: -55px;
+  }
+}
+
+.section__jointName .inner__more--textHover::after {
+  -webkit-transition: 0.65s;
+  transition: 0.65s;
+}
+
+.section__jointName .inner__more--imgHover {
+  margin-left: 17px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 1199px) {
+  .section__jointName .inner__more--imgHover {
+    width: 27px;
+    height: 27px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .section__jointName .inner__more--imgHover {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.section__jointName .inner__brand {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -620,7 +712,7 @@ hr {
 }
 
 @media screen and (max-width: 576px) {
-  .section__jointName .inner__list {
+  .section__jointName .inner__brand {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -631,7 +723,7 @@ hr {
   }
 }
 
-.section__jointName .inner__item {
+.section__jointName .inner__brand__item {
   /* 若使用 df去做置中，圖片+文字會造成高度不正確 */
   /* 而圖片會自動撐開高度 */
   /* 所以讓文字以定位方式置中，就無需使用 flex*/
@@ -640,7 +732,7 @@ hr {
   position: relative;
 }
 
-.section__jointName .inner__item::before {
+.section__jointName .inner__brand__item::before {
   position: absolute;
   content: "";
   top: 0;
@@ -650,7 +742,7 @@ hr {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.section__jointName .inner__text {
+.section__jointName .inner__brand__text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -840,7 +932,6 @@ hr {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  /* 會向外延伸 */
 }
 
 @media screen and (max-width: 1199px) {
@@ -857,15 +948,22 @@ hr {
   }
 }
 
-.container__jointName {
-  margin-left: -170px;
-  margin-right: -170px;
+.jointContainer {
+  max-width: 1540px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1199px) {
-  .container__jointName {
-    margin-left: 0px;
-    margin-right: 0px;
+  .jointContainer {
+    max-width: 1296px;
+    padding: 0 48px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .jointContainer {
+    max-width: 1224px;
+    padding: 0 12px;
   }
 }
 

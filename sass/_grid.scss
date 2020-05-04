@@ -10,20 +10,24 @@
     max-width: 1224px;
     padding: 0 12px;
   }
-  /* 會向外延伸 */
-  &__jointName {
-    margin-left: -170px;
-    margin-right: -170px;
-    @include media-breakpoint-lg {
-      margin-left: 0px;
-      margin-right: 0px;
-    }
-
+}
+.jointContainer{
+  max-width: 1540px;
+  margin: 0 auto;
+  @include media-breakpoint-lg {
+    max-width: 1296px;
+    padding: 0 48px;
   }
+  @include media-breakpoint-sm {
+    max-width: 1224px;
+    padding: 0 12px;
+  }
+
 }
 
 /* 子容器 */
-// 數字比整數少，是因為可以在 flex下jcsb時，多欄分開，但這後續有問題，78px左右推擠12px
+// 數字比整數少，是因為可以在 flex下jcsb時，多欄分開
+// 欄位78px，左右推擠12px，主容器再去扣掉最左最右
 
 
 .col-1{
