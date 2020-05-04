@@ -189,13 +189,20 @@
     background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
     background-size: cover;
     padding-bottom: 480px;
-
     .inner {
       &__mixed {
         // 1540 -> 677 -> 333
         display: flex;
         justify-content: center;
         margin-bottom: 3.75rem;
+        @include media-breakpoint-sm{
+          .mb-1{
+            margin-bottom: 2px;
+          }
+          .mr-1{
+            margin-right: 2px;
+          }
+        }
 
         > li {
           // 左欄
@@ -220,6 +227,7 @@
             }
           }
         }
+        
         &__secondary {
           > li {
             // 眼鏡哥
@@ -227,7 +235,7 @@
               max-width: 13.77%;
 
               @include media-breakpoint-sm {
-                max-width: 19%;
+                max-width: 22%;
               }
             }
             &:last-child {
@@ -243,7 +251,7 @@
           }
         }
       }
-
+      // 黃眼鏡
       &__more {
         position: relative;
         display: block;
@@ -258,8 +266,9 @@
         @include media-breakpoint-sm {
           align-items: start;
           margin-right: 0px;
-          max-width: 60%;
+          max-width: 62%;
         }
+        
         &:hover {
           .inner__more--imgHover {
             transform: translateX(15px);
@@ -295,6 +304,7 @@
             }
           }
         }
+        // 白色區塊
         &__secondary {
           position: absolute;
           top: 50%;
@@ -302,6 +312,14 @@
           transform: translateY(-50%);
           @include media-breakpoint-lg {
             right: -50px;
+          }
+          @include media-breakpoint-sm{
+            width: 124px;
+            right: 0px;
+            left: 10px;
+          }
+          @media (max-width:374px){
+            max-width: 100%;
           }
           
         }
@@ -321,6 +339,10 @@
           }
           @include media-breakpoint-sm {
             padding: 0 12px 0 14px;
+          }
+          @media (max-width:374px){
+            padding: 0 6px 0 7px;
+            font-size: 16px;
           }
           
         }
@@ -343,7 +365,10 @@
             }
             @include media-breakpoint-sm {
               left: 14px;
-              right: -55px;
+            }
+            @media (max-width:374px){
+              font-size: 16px;
+              left: 6px;
             }
           }
           &::after {
@@ -361,6 +386,11 @@
           @include media-breakpoint-sm {
             width: 18px;
             height: 18px;
+          }
+          @media (max-width:374px){
+            width: 9px;
+            height: 9px;
+            margin-left: 5px;
           }
         }
       }
