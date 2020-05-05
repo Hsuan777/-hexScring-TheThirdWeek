@@ -1,6 +1,6 @@
 /* 主容器 */
 .container {
-  max-width: 1200px;
+  max-width: 1224px;
   margin: 0 auto;
   @include media-breakpoint-lg {
     max-width: 1296px;
@@ -11,7 +11,7 @@
     padding: 0 12px;
   }
 }
-.jointContainer{
+.jointContainer {
   max-width: 1540px;
   margin: 0 auto;
   @include media-breakpoint-lg {
@@ -22,70 +22,97 @@
     max-width: 1224px;
     padding: 0 12px;
   }
-
 }
 
 /* 子容器 */
-// 數字比整數少，是因為可以在 flex下jcsb時，多欄分開
-// TODO:欄位78px，左右推擠12px，主容器再去扣掉最左最右
+// 未使用格線系統時，比例是依照 "列寬"加上"間隔寬度"算出來，在 flex下jcsb時，多欄分開
 
-
-.col-1{
-  max-width: 8%;
-}
-.col-2{
-  max-width: 16%;
-}
-// 三欄，外容器之32.33%寬
-.col-4 {
-  max-width: 32%;
-}
-.col-5{
-  max-width: 40%;
-}
-.col-7{
-  max-width: 56%;
+// 使用格線系統
+// 每一欄 1/12 * 100%
+// 間隔寬度 24px -> padding 0 12px;
+$columns:12;
+$column-spacing:24px;
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -$column-spacing/2;
 }
 
-.col-8{
-  max-width: 64%;
+@for $i from 1 through $columns{
+  .col-#{$i}{
+    /* 內容需要100%才能佔滿，內容可能不足以撐開 */
+    width: 100%;
+    padding: 0 $column-spacing/2;
+    /* 取消 flex預設 */
+    flex-basis: 0;
+    flex-grow: 1;
+    
+    /* 佔 $i 欄寬度 */
+    max-width:( $i / $columns)* 100%;
+    /* flex: flex-grow flex-shrink flex-basis */
+    flex: 0 0 ($i/ $columns )* 100%;
+    
+  }
 }
-.col-9{
-  max-width: 72%;
+@include media-breakpoint-md{
+  @for $i from 1 through $columns{
+    .col-md-#{$i}{
+      
+      width: 100%;
+      padding: 0 $column-spacing/2;
+      
+      flex-basis: 0;
+      flex-grow: 1;
+  
+      max-width:( $i / $columns)* 100%;
+      flex: 0 0 ($i/ $columns )* 100%;
+    }
+
+  }
 }
-.col-10{
-  max-width: 80%;
+@include media-breakpoint-sm{
+  @for $i from 1 through $columns{
+    
+    .col-sm-#{$i}{
+      
+      width: 100%;
+      padding: 0 $column-spacing/2;
+      
+      flex-basis: 0;
+      flex-grow: 1;
+  
+      max-width:( $i / $columns)* 100%;
+      flex: 0 0 ($i/ $columns )* 100%;
+    }
+    
+  }
 }
-.col-11{
-  max-width: 88%;
+
+// .col-md-6 {
+//   @include media-breakpoint-md {
+//     max-width: 48.2%;
+//   }
+//   @include media-breakpoint-sm {
+//     max-width: 100%;
+//   }
+// }
+
+.col-sm-100 {
+  @include media-breakpoint-sm {
+    max-width: 100%;
+  }
 }
 
 // 四欄，外容器之23.5%寬
-.col-3 {
-  max-width: 23.5%;
-}
+// .col-3 {
+//   max-width: 23.5%;
+// }
 // 兩欄，外容器之48%寬且永遠保持48%
-.col-6 {
-  max-width: 48%;
-}
-
+// .col-6 {
+//   max-width: 48%;
+// }
 
 // 單欄或滿寬
-.col-12 {
-  max-width: 100%;
-}
-
-
-.col-md-6{
-  @include media-breakpoint-md {
-    max-width: 48.2%;
-  }
-  @include media-breakpoint-sm {
-    max-width: 100%;
-  }
-}
-.col-sm-100{
-  @include media-breakpoint-sm {
-    max-width: 100%;
-  }
-}
+// .col-12 {
+//   max-width: 100%;
+// }
