@@ -1,75 +1,10 @@
-/* 背景與文字顏色 */
-@each $color, $value in ($color) {
-  .bg-#{$color} {
-    background-color: $value;
-  }
-  .text-#{$color} {
-    color: $value;
-  }
-}
-/* text */
-.text-center {
-  text-align: center;
-}
-.text-right {
-  text-align: right;
-}
-.font-italic {
-  font-style: italic;
+
+
+.custom__bg {
+  background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
+  background-size: cover;
 }
 
-.h-100 {
-  height: 100%;
-}
-.w-100 {
-  width: 100%;
-}
-
-/* display */
-.d-block {
-  display: block;
-}
-.d-none {
-  display: none;
-}
-@include media-breakpoint-md {
-  .d-md-none {
-    display: none;
-  }
-}
-@include media-breakpoint-sm {
-  .d-sm-block {
-    display: block;
-  }
-  .d-sm-none {
-    display: none;
-  }
-}
-
-/* 框線參考用 */
-.border-white {
-  border: 1px solid #fff;
-}
-.border-dark {
-  border: 1px solid black;
-}
-
-.logo {
-  @include hidden-text(80px, 49px, url("../img/logo-new_工作區域 1.png"));
-  @include media-breakpoint-sm {
-    width: 48px;
-    height: 30px;
-    background-size: 48px 30px;
-  }
-}
-.icon {
-  width: 48px;
-  height: 48px;
-  @include media-breakpoint-md {
-    width: 32px;
-    height: 32px;
-  }
-}
 
 .section {
   /* 區塊基礎設定 */
@@ -103,7 +38,7 @@
         flex-direction: column;
         align-items: center;
         padding: 0 37px;
-        @include media-breakpoint-md {
+        @include media-breakpoint-lg {
           padding: 0 50px;
         }
         @include media-breakpoint-sm {
@@ -114,6 +49,12 @@
         width: 100px;
         height: 100px;
         margin-bottom: 40px;
+        @include media-breakpoint-lg {
+          margin-bottom: 20px;
+        }
+        @include media-breakpoint-sm {
+          margin-bottom: 16px;
+        }
       }
     }
   }
@@ -129,7 +70,7 @@
           height: 134px;
           color: white;
           background-position: center;
-          background-size: contain;
+          background-size: cover;
           background-repeat: no-repeat;
         }
         &:nth-child(1) {
@@ -189,17 +130,21 @@
     background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
     background-size: cover;
     padding-bottom: 480px;
+    @include media-breakpoint-sm {
+      padding-bottom: 189px;
+    }
     .inner {
       &__mixed {
         // 1540 -> 677 -> 333
         display: flex;
         justify-content: center;
         margin-bottom: 3.75rem;
-        @include media-breakpoint-sm{
-          .mb-1{
+        @include media-breakpoint-sm {
+          margin-bottom: 30px;
+          .mb-1 {
             margin-bottom: 2px;
           }
-          .mr-1{
+          .mr-1 {
             margin-right: 2px;
           }
         }
@@ -227,13 +172,12 @@
             }
           }
         }
-        
+
         &__secondary {
           > li {
             // 眼鏡哥
             &:first-child {
               max-width: 13.77%;
-
               @include media-breakpoint-sm {
                 max-width: 22%;
               }
@@ -268,7 +212,7 @@
           margin-right: 0px;
           max-width: 62%;
         }
-        
+
         &:hover {
           .inner__more--imgHover {
             transform: translateX(15px);
@@ -285,7 +229,6 @@
               @include media-breakpoint-md {
                 font-size: 16px;
                 transform: translateY(-50px);
-
               }
             }
             &::after {
@@ -299,7 +242,6 @@
               @include media-breakpoint-md {
                 font-size: 8px;
                 transform: translateY(-50px);
-
               }
             }
           }
@@ -313,17 +255,15 @@
           @include media-breakpoint-lg {
             right: -50px;
           }
-          @include media-breakpoint-sm{
+          @include media-breakpoint-sm {
             width: 124px;
             right: 0px;
             left: 10px;
           }
-          @media (max-width:374px){
+          @media (max-width: 374px) {
             max-width: 100%;
           }
-          
         }
-
         &__text {
           position: relative;
           font-size: 72px;
@@ -340,11 +280,10 @@
           @include media-breakpoint-sm {
             padding: 0 12px 0 14px;
           }
-          @media (max-width:374px){
+          @media (max-width: 374px) {
             padding: 0 6px 0 7px;
             font-size: 16px;
           }
-          
         }
         &--textHover {
           &::before,
@@ -366,7 +305,7 @@
             @include media-breakpoint-sm {
               left: 14px;
             }
-            @media (max-width:374px){
+            @media (max-width: 374px) {
               font-size: 16px;
               left: 6px;
             }
@@ -387,7 +326,7 @@
             width: 18px;
             height: 18px;
           }
-          @media (max-width:374px){
+          @media (max-width: 374px) {
             width: 9px;
             height: 9px;
             margin-left: 5px;
@@ -395,12 +334,6 @@
         }
       }
       &__brand {
-        display: flex;
-        justify-content: space-between;
-        @include media-breakpoint-sm {
-          flex-direction: column;
-          align-items: center;
-        }
         &__item {
           /* 若使用 df去做置中，圖片+文字會造成高度不正確 */
           /* 而圖片會自動撐開高度 */
@@ -417,6 +350,36 @@
             right: 0;
             left: 0;
             background-color: rgba(white, $alpha: 0.5);
+            z-index: 1;
+          }
+
+          &::after {
+            position: absolute;
+            content: "";
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+          }
+          &--first {
+            &::after {
+              background-image: url("../img/14.png");
+            }
+          }
+          &--secondary {
+            &::after {
+              background-image: url("../img/39.png");
+            }
+          }
+          @include media-breakpoint-md {
+            font-size: 48px;
+          }
+          @include media-breakpoint-sm {
+            font-size: 32px;
+            height: 284px;
           }
         }
         &__text {
@@ -425,6 +388,7 @@
           left: 50%;
           transform: translate(-50%, -50%);
           white-space: nowrap;
+          z-index: 9;
         }
       }
     }
@@ -432,16 +396,19 @@
   /* 顧客推薦 */
   &__recommend {
     margin-top: -400px;
-    .inner {
-      &__list {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        @include media-breakpoint-sm {
-          justify-content: center;
-        }
-      }
+    @include media-breakpoint-sm {
+      margin-top: -189px;
     }
+    // .inner {
+    //   &__list {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     flex-wrap: wrap;
+    //     @include media-breakpoint-sm {
+    //       justify-content: center;
+    //     }
+    //   }
+    // }
   }
 
   /* 聯絡我們 */
@@ -492,6 +459,11 @@
           padding: 1px 0px 2px 4px;
           margin-right: 4px;
           color: transparent;
+          @include media-breakpoint-sm {
+            width: 16px;
+            height: 16px;
+            padding: 1px 0px 1px 3px;
+          }
         }
       }
 
@@ -540,27 +512,9 @@
         right: 0;
         bottom: 0;
       }
-    }
-  }
-}
-
-.custom__bg {
-  background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
-  background-size: cover;
-  background-position-y: 200px;
-  position: relative;
-  z-index: 0;
-  &::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 324px;
-    background: white;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    @include media-breakpoint-sm {
-      height: 2292px;
+      @include media-breakpoint-sm{
+        font-size: 14px;
+      }
     }
   }
 }

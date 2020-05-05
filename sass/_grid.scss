@@ -1,31 +1,29 @@
 /* 主容器 */
 .container {
-  max-width: 1224px;
+  max-width: 1200px;
   margin: 0 auto;
   @include media-breakpoint-lg {
-    max-width: 1296px;
-    padding: 0 48px;
+  max-width: 1224px;
+  padding: 0 24px;
   }
   @include media-breakpoint-sm {
-    max-width: 1224px;
     padding: 0 12px;
   }
+  
 }
 .jointContainer {
-  max-width: 1540px;
+  
   margin: 0 auto;
   @include media-breakpoint-lg {
-    max-width: 1296px;
-    padding: 0 48px;
+    max-width: 1224px;
+    padding: 0 24px;
   }
   @include media-breakpoint-sm {
-    max-width: 1224px;
     padding: 0 12px;
   }
 }
 
 /* 子容器 */
-// 未使用格線系統時，比例是依照 "列寬"加上"間隔寬度"算出來，在 flex下jcsb時，多欄分開
 
 // 使用格線系統
 // 每一欄 1/12 * 100%
@@ -52,6 +50,22 @@ $column-spacing:24px;
     /* flex: flex-grow flex-shrink flex-basis */
     flex: 0 0 ($i/ $columns )* 100%;
     
+  }
+}
+@include media-breakpoint-lg{
+  @for $i from 1 through $columns{
+    .col-lg-#{$i}{
+      
+      width: 100%;
+      padding: 0 $column-spacing/2;
+      
+      flex-basis: 0;
+      flex-grow: 1;
+  
+      max-width:( $i / $columns)* 100%;
+      flex: 0 0 ($i/ $columns )* 100%;
+    }
+
   }
 }
 @include media-breakpoint-md{
@@ -84,10 +98,37 @@ $column-spacing:24px;
       max-width:( $i / $columns)* 100%;
       flex: 0 0 ($i/ $columns )* 100%;
     }
-    
+    .col-#{$i}{
+      width: 100%;
+      max-width: 100%;
+      flex: 0 0  100%;
+    }
+    .col-md-#{$i}{
+      width: 100%;
+      max-width: 100%;
+      flex: 0 0  100%;
+    }
+    .col-lg-#{$i}{
+      width: 100%;
+      max-width: 100%;
+      flex: 0 0  100%;
+    }
   }
 }
+.no-gutters{
+  margin-right: 0;
+  margin-left: 0 ;
+  [class*="col-"]{
+    padding-left: 0 ;
+		padding-right: 0 ;
+  }
+	
+}
 
+	
+
+
+// 未使用格線系統時，比例是依照 "列寬"加上"間隔寬度"算出來，在 flex下jcsb時，多欄分開
 // .col-md-6 {
 //   @include media-breakpoint-md {
 //     max-width: 48.2%;
@@ -96,13 +137,6 @@ $column-spacing:24px;
 //     max-width: 100%;
 //   }
 // }
-
-.col-sm-100 {
-  @include media-breakpoint-sm {
-    max-width: 100%;
-  }
-}
-
 // 四欄，外容器之23.5%寬
 // .col-3 {
 //   max-width: 23.5%;
