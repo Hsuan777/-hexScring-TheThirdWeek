@@ -863,6 +863,26 @@ hr {
   }
 }
 
+.product__title {
+  font-size: 42px;
+  line-height: 1.5;
+  position: relative;
+}
+
+.product__title:hover::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background-color: #AA0601;
+}
+
+.product + .product__title {
+  border-left: 1px solid #dcdcdc;
+}
+
 /* 背景與文字顏色 */
 .bg-primary {
   background-color: #650300;
@@ -1992,6 +2012,10 @@ hr {
 /* spacing */
 .px-3 {
   padding: 0 1.5rem;
+}
+
+.py-3 {
+  padding: 1.5rem 0;
 }
 
 .py-4 {
