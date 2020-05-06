@@ -1,3 +1,13 @@
+.logo {
+  @include hidden-text(80px, 49px, url("../img/logo-new_工作區域 1.png"));
+  @include media-breakpoint-sm {
+    width: 48px;
+    height: 30px;
+    background-size: 48px 30px;
+  }
+}
+
+
 .navbar {
     display: flex;
     align-items: center;

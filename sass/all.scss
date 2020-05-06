@@ -2,6 +2,7 @@
 @import "variables";
 @import "mixin";
 @import "base";
+@import "layout";
 
 // Project
 @import "index";
@@ -12,7 +13,6 @@
 @import "spacing";
 @import "flex";
 
-@import "banner";
 @import "navbar";
 @import "card";
 

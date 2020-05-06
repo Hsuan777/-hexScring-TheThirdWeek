@@ -14,14 +14,33 @@
         background-color: map-get($color, secondary);
       }
     }
+    + .product__title {
+      border-left: 1px solid #dcdcdc;
+    }
     // .active {
 
     // }
   }
-  + .product__title {
-    border-left: 1px solid #dcdcdc;
-    
+  
+  &__banner{
+    margin-bottom: 88px;
   }
-
+  &__price{
+    color: map-get($color, secondary );
+  }
+  
+  &__color{
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    &:first-child{
+      background-color: #5F3E2D;
+    }
+    &:last-child{
+      background-color: #B75929;
+    }
+  }
   
 }
