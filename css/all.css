@@ -174,20 +174,6 @@ hr {
   }
 }
 
-.banner {
-  height: 840px;
-  background-image: url("../img/68.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-@media screen and (max-width: 576px) {
-  .banner {
-    height: 394px;
-  }
-}
-
 .custom__bg {
   background-image: url("../img/nick-owuor-astro-nic-visuals-54Q_HvMWtVE-unsplash.png");
   background-size: cover;
@@ -2314,6 +2300,28 @@ hr {
   .flex-sm-wrap {
     flex-wrap: wrap;
   }
+}
+
+.banner {
+  height: 840px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 576px) {
+  .banner {
+    height: 394px;
+  }
+}
+
+.banner__index {
+  background-image: url("../img/68.png");
+}
+
+.banner__question {
+  background-image: url("../img/72@2x.png");
+  height: 304px;
 }
 
 .logo {
