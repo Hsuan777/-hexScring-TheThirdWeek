@@ -5,18 +5,18 @@
 @import "layout";
 
 // Project
-@import "index";
-@import "product";
-@import "question";
+@import "pages/index";
+@import "pages/product";
+@import "pages/question";
 
-@import "utilities";
-@import "grid";
-@import "spacing";
-@import "flex";
+@import "utilities/utilities";
+@import "utilities/grid";
+@import "utilities/spacing";
+@import "utilities/flex";
 
-@import "banner";
-@import "navbar";
-@import "card";
+@import "components/banner";
+@import "components/navbar";
+@import "components/card";
 
 
 
