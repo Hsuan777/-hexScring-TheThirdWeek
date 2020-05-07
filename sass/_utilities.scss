@@ -32,6 +32,14 @@
 .d-none {
   display: none;
 }
+@include media-breakpoint-lg {
+  .d-lg-block {
+    display: block;
+  }
+  .d-lg-none {
+    display: none;
+  }
+}
 @include media-breakpoint-md {
   .d-md-block {
     display: block;

@@ -788,7 +788,7 @@ hr {
   align-items: center;
   font-size: 42px;
   line-height: 1.5;
-  padding: 24px 40px;
+  padding: 24px 0;
   position: relative;
 }
 
@@ -808,14 +808,43 @@ hr {
 
 @media screen and (max-width: 1199px) {
   .product__title {
-    font-size: 36px;
+    font-size: 28px;
+    padding: 16px 0;
   }
 }
 
 @media screen and (max-width: 768px) {
   .product__title {
-    font-size: 28px;
-    padding: 16px 40px;
+    font-size: 20px;
+    padding: 12px 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .product__title {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .product__title .icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product__title .icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .product__title .icon {
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -823,22 +852,65 @@ hr {
   margin-bottom: 88px;
 }
 
-.product__banner__left {
-  background-image: url("../img/2.png ");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-  width: 100%;
-  height: 309px;
+@media screen and (max-width: 1199px) {
+  .product__banner {
+    margin-bottom: 40px;
+  }
 }
 
-.product__banner__right {
-  background-image: url("../img/11.png ");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-  width: 100%;
-  height: 309px;
+@media screen and (max-width: 576px) {
+  .product__banner {
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product__banner__left {
+    background-image: url("../img/2@2x.png ");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 384px;
+    height: 309px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .product__banner__left {
+    height: 114px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product__banner__right {
+    background-image: url("../img/11@2x.png ");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 309px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .product__banner__right {
+    height: 114px;
+  }
+}
+
+.product__list > li {
+  margin-bottom: 104px;
+}
+
+@media screen and (max-width: 768px) {
+  .product__list > li {
+    margin-bottom: 72px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .product__list > li {
+    margin-bottom: 32px;
+  }
 }
 
 .product__price {
@@ -930,6 +1002,15 @@ hr {
 
 .d-none {
   display: none;
+}
+
+@media screen and (max-width: 1199px) {
+  .d-lg-block {
+    display: block;
+  }
+  .d-lg-none {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
