@@ -80,6 +80,13 @@
         }
         &:nth-child(2) {
           flex-direction: row-reverse;
+          .inner__img{
+            filter: grayscale(100%);
+            &:hover{
+              filter: grayscale(0%);
+            }
+          }
+          
           .inner__text {
             justify-content: flex-end;
           }
@@ -90,7 +97,11 @@
             }
           }
           @include media-breakpoint-sm {
-            background-image: url("../img/15 2.png");
+            background-image: url("../img/15@2x.png");
+            filter: grayscale(100%);
+            &:hover{
+              filter: grayscale(0%);
+            }
           }
         }
         &:nth-child(3) {

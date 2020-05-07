@@ -306,6 +306,14 @@ hr {
   flex-direction: row-reverse;
 }
 
+.section__classic .inner__item:nth-child(2) .inner__img {
+  filter: grayscale(100%);
+}
+
+.section__classic .inner__item:nth-child(2) .inner__img:hover {
+  filter: grayscale(0%);
+}
+
 .section__classic .inner__item:nth-child(2) .inner__text {
   justify-content: flex-end;
 }
@@ -321,7 +329,11 @@ hr {
 
 @media screen and (max-width: 576px) {
   .section__classic .inner__item:nth-child(2) {
-    background-image: url("../img/15 2.png");
+    background-image: url("../img/15@2x.png");
+    filter: grayscale(100%);
+  }
+  .section__classic .inner__item:nth-child(2):hover {
+    filter: grayscale(0%);
   }
 }
 
