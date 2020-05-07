@@ -32,5 +32,17 @@
         }
       }
     }
+    .icon{
+      width: 48px;
+      height: 48px;
+      @include media-breakpoint-md{
+        width: 32px;
+        height: 32px;
+      }
+      @include media-breakpoint-sm{
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
   
