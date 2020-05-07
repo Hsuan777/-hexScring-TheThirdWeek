@@ -12,6 +12,26 @@
   &__question{
     background-image: url("../img/72@2x.png");
     height: 304px;
+    margin-bottom: 88px;
+    @include media-breakpoint-md{
+      margin-bottom: 40px;
+    }
+    @include media-breakpoint-sm{
+      height: 104px;
+      margin-bottom: 24px;
+    }
+    .icon{
+      width: 58px;
+      height: 58px;
+      @include media-breakpoint-md{
+        width: 48px;
+        height: 48px;
+      }
+      @include media-breakpoint-sm{
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
 }

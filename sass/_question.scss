@@ -1,0 +1,21 @@
+.question{
+  &__list{
+    margin-bottom: 156px;
+    @include media-breakpoint-md{
+        margin-bottom: 104px;
+    }
+    @include media-breakpoint-sm{
+        margin-bottom: 56px;
+    }
+  }
+  &__title{
+    padding: 22px 38px;
+    border-bottom: 1px solid #000;
+    
+  }
+  &__text{
+    padding: 22px 38px;
+    background-color: #F2F2F2;
+    border-bottom: 1px solid #000;
+  }
+}

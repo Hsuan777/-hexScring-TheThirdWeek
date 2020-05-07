@@ -67,13 +67,7 @@
 .border-right{
   border-right: 1px solid #DCDCDC;;
 }
-
-
-.icon {
-  width: 48px;
-  height: 48px;
-  @include media-breakpoint-md {
-    width: 32px;
-    height: 32px;
-  }
+.border-bottom--none{
+  border-bottom: none;
 }
+
