@@ -29,7 +29,7 @@
         <h1 class="logo">六角眼鏡</h1>
       </a>
       <button type="button" class="navbar__toggler">
-        <span class="material-icons"> reorder </span>
+        <img src="img/ic_menu_24px.svg" alt="">
       </button>
       <div class="navbar__list">
         <a href="product.html" class="navbar__link">系列鏡框</a>
@@ -143,5 +143,14 @@
       </ul>
     </div>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.5.0.slim.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".navbar__toggler").click(function (e) {
+        e.preventDefault();
+        $(".navbar__list").toggleClass("active");
+      });
+    });
+  </script>s
 </body>
 
