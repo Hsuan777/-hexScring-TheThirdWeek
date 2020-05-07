@@ -1,21 +1,40 @@
-.question{
-  &__list{
+.question {
+  &__list {
     margin-bottom: 156px;
-    @include media-breakpoint-md{
-        margin-bottom: 104px;
+    @include media-breakpoint-md {
+      margin-bottom: 104px;
     }
-    @include media-breakpoint-sm{
-        margin-bottom: 56px;
+    @include media-breakpoint-sm {
+      margin-bottom: 56px;
+    }
+    .active {
+      .question {
+        &__text {
+          display: block;
+        }
+        &__title__icon {
+          background-image: url("../img/ic_keyboard_arrow_down_24px.svg");
+          width: 40px;
+          height: 24px;
+          display: block;
+        }
+      }
     }
   }
-  &__title{
+  &__title {
     padding: 22px 38px;
     border-bottom: 1px solid #000;
-    
+    &__icon {
+      background-image: url("../img/ic_keyboard_arrow_up_24px.svg");
+      width: 40px;
+      height: 24px;
+      display: block;
+    }
   }
-  &__text{
+  &__text {
     padding: 22px 38px;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     border-bottom: 1px solid #000;
+    display: none;
   }
 }

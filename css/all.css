@@ -1102,15 +1102,34 @@ hr {
   }
 }
 
+.question__list .active .question__text {
+  display: block;
+}
+
+.question__list .active .question__title__icon {
+  background-image: url("../img/ic_keyboard_arrow_down_24px.svg");
+  width: 40px;
+  height: 24px;
+  display: block;
+}
+
 .question__title {
   padding: 22px 38px;
   border-bottom: 1px solid #000;
 }
 
+.question__title__icon {
+  background-image: url("../img/ic_keyboard_arrow_up_24px.svg");
+  width: 40px;
+  height: 24px;
+  display: block;
+}
+
 .question__text {
   padding: 22px 38px;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   border-bottom: 1px solid #000;
+  display: none;
 }
 
 /* 背景與文字顏色 */
@@ -1218,6 +1237,14 @@ hr {
 
 .border-dark {
   border: 1px solid black;
+}
+
+.border-dark--top {
+  border-top: 1px solid black;
+}
+
+.border-top {
+  border-top: 1px solid #DCDCDC;
 }
 
 .border-right {
