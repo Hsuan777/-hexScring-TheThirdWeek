@@ -911,6 +911,20 @@ hr {
   }
 }
 
+.product__featuresList .active {
+  position: relative;
+}
+
+.product__featuresList .active::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background-color: #AA0601;
+}
+
 .product__title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1070,20 +1084,6 @@ hr {
 
 .product__pagination {
   margin-bottom: 156px;
-}
-
-.active {
-  position: relative;
-}
-
-.active::after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 16px;
-  background-color: #AA0601;
 }
 
 .question__list {
