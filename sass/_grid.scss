@@ -10,15 +10,12 @@ $column-spacing:24px;
 /* 主容器容器寬度 = 內容寬度 + 欄位間距 */
 /* 1920px 意義為滿版 ; 設計稿內容寬度為 1200px ; 欄位間距為 24px */
 .container {
-  &--fluid{
-    max-width: auto;
-    padding: 0 $column-spacing/2;
-  }
-  max-width: (1200+$column-spacing*2)px;
+  max-width: 1200px+$column-spacing*2;
   padding: 0 $column-spacing;
   margin: 0 auto;
+  
   @include media-breakpoint-md {
-    max-width: (1200+$column-spacing*4)px;
+    max-width: 1200px+$column-spacing*4;
     padding: 0 $column-spacing*4;
   }
   @include media-breakpoint-sm {
@@ -30,7 +27,7 @@ $column-spacing:24px;
   max-width: 1540px;
   margin: 0 auto;
   @include media-breakpoint-lg {
-    max-width: (1200+$column-spacing*4)px;
+    max-width:  1200px+$column-spacing*4;
     padding: 0 $column-spacing*2;
   }
   @include media-breakpoint-sm {
@@ -49,6 +46,10 @@ $column-spacing:24px;
   @include media-breakpoint-md {
     margin-left:  -$column-spacing*2;
     margin-right: -$column-spacing*2;
+  }
+  @include media-breakpoint-sm{
+    margin-left:  -$column-spacing/2;
+    margin-right: -$column-spacing/2;
   }
   
 }
@@ -117,27 +118,13 @@ $column-spacing:24px;
       max-width:( $i / $columns)* 100%;
       flex: 0 0 ($i/ $columns )* 100%;
     }
-    .col-#{$i}{
-      width: 100%;
-      max-width: 100%;
-      flex: 0 0  100%;
-    }
-    .col-md-#{$i}{
-      width: 100%;
-      max-width: 100%;
-      flex: 0 0  100%;
-    }
-    .col-lg-#{$i}{
-      width: 100%;
-      max-width: 100%;
-      flex: 0 0  100%;
-    }
+    
   }
 }
 .no-gutters{
   margin-right: 0;
   margin-left: 0 ;
-  [class*="col-"]{
+  > [class*="col-"]{
     padding-left: 0 ;
 		padding-right: 0 ;
   }

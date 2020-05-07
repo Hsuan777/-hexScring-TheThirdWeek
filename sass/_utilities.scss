@@ -33,6 +33,9 @@
   display: none;
 }
 @include media-breakpoint-md {
+  .d-md-block {
+    display: block;
+  }
   .d-md-none {
     display: none;
   }
@@ -52,6 +55,9 @@
 }
 .border-dark {
   border: 1px solid black;
+}
+.border-right{
+  border-right: 1px solid #DCDCDC;;
 }
 
 
