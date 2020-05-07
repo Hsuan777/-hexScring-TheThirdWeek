@@ -51,7 +51,7 @@
       <div class="container d-md-none ">
         <ul class=" row no-gutters justify-content--center">
           <li class="col-4 ">
-            <a href="" class="product__title text-dark border-right">
+            <a href="" class="product__title active text-dark border-right">
               <img src="img/iconfinder_44_2529968_black.svg" alt="" class="icon mr-1  ">
               OPTICAL
             </a>
@@ -96,10 +96,10 @@
       <!-- 產品示意圖 -->
       <div class="product__banner">
         <div class="row no-gutters justify-content--between flex-nowrap">
-          <div class="col-6 product__banner__left">
+          <div class="col-6 product__banner__left product__banner__img">
             <img src="img/2@2x.png " alt="" class="pr-1 px-md-0 d-md-none">
           </div>
-          <div class="col-6 product__banner__right">
+          <div class="col-6 product__banner__right product__banner__img">
             <img src="img/11@2x.png" alt="" class="pl-1 px-md-0 d-md-none">
           </div>
         </div>
@@ -154,7 +154,7 @@
               <button type="button" class="product__color"></button>
             </div>
           </li>
-          <li class="col-3  col-md-6  col-sm-12">
+          <li class="col-3  col-md-6  col-sm-12 ">
             <img src="img/16@2x.png" alt="">
             <div class="d-flex justify-content--between ">
               <p>BJ41600S</p>
@@ -165,7 +165,7 @@
               <button type="button" class="product__color"></button>
             </div>
           </li>
-          <li class="col-3  col-md-6  col-sm-12">
+          <li class="col-3  col-md-6  col-sm-12 ">
             <img src="img/16@2x.png" alt="">
             <div class="d-flex justify-content--between ">
               <p>BJ41600S</p>
@@ -176,7 +176,7 @@
               <button type="button" class="product__color"></button>
             </div>
           </li>
-          <li class="col-3  col-md-6  col-sm-12">
+          <li class="col-3  col-md-6  col-sm-12 ">
             <img src="img/16@2x.png" alt="">
             <div class="d-flex justify-content--between ">
               <p>BJ41600S</p>
@@ -187,7 +187,7 @@
               <button type="button" class="product__color"></button>
             </div>
           </li>
-          <li class="col-3  col-md-6  col-sm-12">
+          <li class="col-3  col-md-6  col-sm-12 ">
             <img src="img/16@2x.png" alt="">
             <div class="d-flex justify-content--between ">
               <p>BJ41600S</p>
@@ -199,7 +199,41 @@
             </div>
           </li>
         </ul>
+
+
+        <nav aria-label="Pages navigation ">
+          <ul class="product__pagination pagination ">
+            <li class="pagination__item ">
+              <a type="button" class="pagination__link  "  aria-label="Previous" href="#">
+                <span aria-hidden="true">上一頁</span>
+              </a>
+            </li>
+            <li class="pagination__item ">
+              <a class="pagination_link " href="#">1</a>
+            </li>
+            <li class="pagination__item active">
+              <a class="pagination_link " href="#">2</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination_link " href="#">3</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination_link " href="#">4</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination_link " href="#">5</a>
+            </li>
+            <li class="pagination__item">
+              <a type="button" class="pagination__link " aria-label="Next" href="#">
+                <span aria-hidden="true">下一頁</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
+
+      
+
     </section>
 
 
@@ -263,6 +297,10 @@
       $(".navbar__toggler").click(function (e) {
         e.preventDefault();
         $(".navbar__list").toggleClass("active");
+      });
+      $(".product__title").click(function (e) {
+        e.preventDefault();
+        
       });
     });
   </script>

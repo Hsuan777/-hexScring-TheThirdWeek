@@ -80,6 +80,7 @@ img {
 }
 
 a {
+  color: black;
   text-decoration: none;
 }
 
@@ -998,37 +999,33 @@ hr {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .product__banner__left {
-    background-image: url("../img/2@2x.png ");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    max-width: 384px;
-    height: 309px;
-  }
+.product__banner__img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 309px;
 }
 
 @media screen and (max-width: 576px) {
-  .product__banner__left {
+  .product__banner__img {
     height: 114px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product__banner__left {
+    background-image: url("../img/2@2x.png ");
   }
 }
 
 @media screen and (max-width: 768px) {
   .product__banner__right {
     background-image: url("../img/11@2x.png ");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 309px;
   }
 }
 
-@media screen and (max-width: 576px) {
-  .product__banner__right {
-    height: 114px;
-  }
+.product__list {
+  margin-bottom: 88px;
 }
 
 .product__list > li {
@@ -1047,6 +1044,10 @@ hr {
   }
 }
 
+.product__list > li:nth-last-child(1), .product__list > li:nth-last-child(2), .product__list > li:nth-last-child(3), .product__list > li:nth-last-child(4) {
+  margin-bottom: 0;
+}
+
 .product__price {
   color: #AA0601;
 }
@@ -1060,11 +1061,29 @@ hr {
 }
 
 .product__color:first-child {
-  background-color: #5F3E2D;
+  background-color: #5f3e2d;
 }
 
 .product__color:last-child {
-  background-color: #B75929;
+  background-color: #b75929;
+}
+
+.product__pagination {
+  margin-bottom: 156px;
+}
+
+.active {
+  position: relative;
+}
+
+.active::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background-color: #AA0601;
 }
 
 .question__list {
@@ -2008,6 +2027,10 @@ hr {
   margin: auto 0;
 }
 
+.mb-0 {
+  margin-bottom: 0;
+}
+
 .pt-1 {
   padding-top: 0.5rem;
 }
@@ -2887,5 +2910,41 @@ hr {
 
 .card__footer {
   color: #707070;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pagination__item {
+  border: 1px solid #555555;
+}
+
+.pagination__item:hover {
+  background-color: #AA0601;
+}
+
+.pagination__item a {
+  display: block;
+  padding: 10px 16px 15px 16px;
+}
+
+.pagination__link {
+  color: #555555;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.pagination .active {
+  background-color: black;
+}
+
+.pagination .active a {
+  color: white;
 }
 /*# sourceMappingURL=all.css.map */

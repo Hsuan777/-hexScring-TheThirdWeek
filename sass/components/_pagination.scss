@@ -1,0 +1,26 @@
+.pagination{
+  display: flex;
+  justify-content: center;
+  &__item{   
+    border: 1px solid #555555;
+    &:hover{
+      background-color: map-get($color, secondary );
+    }
+    a {
+      display: block;
+      padding: 10px 16px 15px 16px;
+    }
+  }
+  &__link{
+    color:#555555 ;
+    
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .active{
+    background-color:  black;
+    a{
+      color: white;
+    }
+  }
+}
