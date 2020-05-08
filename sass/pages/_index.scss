@@ -25,14 +25,6 @@
       padding-bottom: 56px;
     }
     .inner {
-      &__list {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        @include media-breakpoint-sm {
-          justify-content: center;
-        }
-      }
       &__item {
         display: flex;
         flex-direction: column;

@@ -24,10 +24,13 @@
   &__title {
     padding: 22px 38px;
     border-bottom: 1px solid #000;
+    @include media-breakpoint-sm{
+      padding:16px;
+    }
     &__icon {
       background-image: url("../img/ic_keyboard_arrow_up_24px.svg");
       width: 40px;
-      height: 24px;
+      height: 26px;
       display: block;
     }
   }
