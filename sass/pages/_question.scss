@@ -21,6 +21,9 @@
       }
     }
   }
+  &__item{
+    cursor: pointer;
+  }
   &__title {
     padding: 22px 38px;
     border-bottom: 1px solid #000;

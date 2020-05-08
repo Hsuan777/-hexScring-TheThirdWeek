@@ -1,4 +1,7 @@
 .footer {
+    .container{
+      padding: 0 48px;
+    }
     font-weight: normal;
     padding-bottom: 24px;
     .navbar {
@@ -7,6 +10,7 @@
       &__list {
         width: 486px;
       }
+      
     }
     @include media-breakpoint-sm {
       .navbar {

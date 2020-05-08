@@ -9,7 +9,7 @@
   margin: 0 auto;
   
   @include media-breakpoint-md {
-    max-width: 1200px+$column-spacing*4;
+    // max-width: 1200px+$column-spacing*4;
     padding: 0 $column-spacing*4;
   }
 

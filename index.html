@@ -232,39 +232,41 @@
     <section class="section__contactUs section bg-third">
       <h2 class=" text-center text-dark  mb-3 mb-md-2 mb-sm-1">聯絡我們</h2>
       <div class="container">
-        <div class="col-8 col-sm-12 mx-auto ">
-          <p class="inner__text">我們相當重視您的意見，若您有任何疑問，可先參考「常見問題」，若仍有任何問題，請填妥以下資料，我們會在近期與您聯繫。</p>
-          <form action="" class="form">
-            <ul>
-              <li class="form__group mb-2">
-                <label for="name">姓名</label>
-                <input type="text" id="name" class="w-100 form__input" placeholder="陳小明">
-              </li>
-              <li class="form__group  mb-2">
-                <label for="phone">聯絡電話</label>
-                <input type="tel" id="phone" class="w-100 form__input" placeholder="0912-345-678">
-              </li>
-              <li class="form__group  mb-2">
-                <label for="email">電子郵件</label>
-                <input type="email" id="email" class="w-100 form__input" placeholder="example@email.com">
-              </li>
-              <li class="form__group  mb-2">
-                <label for="feedback">意見反應</label>
-                <textarea type="text" id="feedback" style="height:136px " class="w-100 form__input"
-                  placeholder="請輸入您的意見"></textarea>
-              </li>
-              <li>
-                <input type="checkbox" name="" id="agree" class="checkbox">
-                <label for="agree" class="checkbox__label d-flex">
-                  我同意隱私權政策，並同意依隱私權政策中所述的方式處理自己的資料。
-                </label>
-              </li>
-              <li class="d-flex justify-content--center">
-                <!-- TODO:checkbox外框 -->
-                <button type="submit" class="btn bg-secondary text-white h4 ">確認送出</button>
-              </li>
-            </ul>
-          </form>
+        <div class="row">
+          <div class="col-8 col-sm-12 mx-auto ">
+            <p class="inner__text">我們相當重視您的意見，若您有任何疑問，可先參考「常見問題」，若仍有任何問題，請填妥以下資料，我們會在近期與您聯繫。</p>
+            <form action="" class="form">
+              <ul>
+                <li class="form__group mb-2">
+                  <label for="name">姓名</label>
+                  <input type="text" id="name" class="w-100 form__input" placeholder="陳小明">
+                </li>
+                <li class="form__group  mb-2">
+                  <label for="phone">聯絡電話</label>
+                  <input type="tel" id="phone" class="w-100 form__input" placeholder="0912-345-678">
+                </li>
+                <li class="form__group  mb-2">
+                  <label for="email">電子郵件</label>
+                  <input type="email" id="email" class="w-100 form__input" placeholder="example@email.com">
+                </li>
+                <li class="form__group  mb-2">
+                  <label for="feedback">意見反應</label>
+                  <textarea type="text" id="feedback" style="height:136px " class="w-100 form__input"
+                    placeholder="請輸入您的意見"></textarea>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="agree" class="checkbox">
+                  <label for="agree" class="checkbox__label d-flex">
+                    我同意隱私權政策，並同意依隱私權政策中所述的方式處理自己的資料。
+                  </label>
+                </li>
+                <li class="d-flex justify-content--center">
+                  <!-- TODO:checkbox外框 -->
+                  <button type="submit" class="btn bg-secondary text-white h4 ">確認送出</button>
+                </li>
+              </ul>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -274,6 +276,7 @@
 
   <footer class="footer bg-secondary">
     <div class="container ">
+      
       <nav class="navbar text-white ">
         <div class="d-none d-sm-block">
           <a href="tel:0800-000-0000" class="h3 mb-2 d-flex align-items--center text-white">
@@ -304,7 +307,9 @@
           <img src="img/ic_mail_outline_24px.svg" alt="" class="icon mr-2"> glasses@business.com
         </a>
       </div>
+
       <hr class="mb-3">
+
       <ul class="d-flex align-items--center justify-content--between text-white copyright">
         <li class="d-flex align-items--center">
           <h4 class="logo mr-4 d-md-none"></h4>

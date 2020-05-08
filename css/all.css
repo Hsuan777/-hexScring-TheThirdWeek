@@ -138,6 +138,10 @@ hr {
   padding-bottom: 24px;
 }
 
+.footer .container {
+  padding: 0 48px;
+}
+
 .footer .navbar {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -1188,6 +1192,10 @@ hr {
   display: block;
 }
 
+.question__item {
+  cursor: pointer;
+}
+
 .question__title {
   padding: 22px 38px;
   border-bottom: 1px solid #000;
@@ -1347,7 +1355,6 @@ hr {
 
 @media screen and (max-width: 768px) {
   .container {
-    max-width: 1296px;
     padding: 0 96px;
   }
 }
