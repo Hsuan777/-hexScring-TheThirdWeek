@@ -75,22 +75,24 @@
       margin-bottom: 24px;
     }
     &__img {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+      
       height: 309px;
+      background-repeat: no-repeat;
+      background-size:cover;
+      background-position: center center;
+     
       @include media-breakpoint-sm {
-        height: 114px;
+        height: 144px;
       }
     }
     &__left {
       @include media-breakpoint-md {
-        background-image: url("../img/2@2x.png ");
+        background-image: url("../img/2@2x_md.png ");
       }
     }
     &__right {
       @include media-breakpoint-md {
-        background-image: url("../img/11@2x.png ");
+        background-image: url("../img/11@2x_md.png ");
       }
     }
   }

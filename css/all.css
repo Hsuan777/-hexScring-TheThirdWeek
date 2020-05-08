@@ -1014,27 +1014,27 @@ hr {
 }
 
 .product__banner__img {
+  height: 309px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  height: 309px;
+  background-position: center center;
 }
 
 @media screen and (max-width: 576px) {
   .product__banner__img {
-    height: 114px;
+    height: 144px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .product__banner__left {
-    background-image: url("../img/2@2x.png ");
+    background-image: url("../img/2@2x_md.png ");
   }
 }
 
 @media screen and (max-width: 768px) {
   .product__banner__right {
-    background-image: url("../img/11@2x.png ");
+    background-image: url("../img/11@2x_md.png ");
   }
 }
 
@@ -2956,15 +2956,24 @@ hr {
   background-color: #AA0601;
 }
 
-.pagination__item a {
-  display: block;
+.pagination__link {
+  color: #555555;
+  font-size: 19px;
+  line-height: 1.5;
+  display: inline-block;
   padding: 10px 16px 15px 16px;
 }
 
-.pagination__link {
-  color: #555555;
-  font-size: 18px;
-  line-height: 1.5;
+@media screen and (max-width: 768px) {
+  .pagination__link {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .pagination__link {
+    padding: 8px 10px 9px 10px;
+  }
 }
 
 .pagination .active {
