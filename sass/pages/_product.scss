@@ -1,6 +1,6 @@
 .product {
-  &__featuresList{
-    .active{
+  &__featuresList {
+    .active {
       position: relative;
       &::after {
         position: absolute;
@@ -10,7 +10,13 @@
         width: 100%;
         height: 16px;
         background-color: map-get($color, secondary);
+        @include media-breakpoint-sm {
+          height: 4px;
+        }
       }
+    }
+    @include media-breakpoint-md {
+      justify-content: space-between;
     }
   }
 
@@ -22,7 +28,7 @@
     line-height: 1.5;
     padding: 24px 0;
     position: relative;
-    &:hover{
+    &:hover {
       &::after {
         position: absolute;
         content: "";
@@ -31,6 +37,9 @@
         width: 100%;
         height: 16px;
         background-color: map-get($color, secondary);
+        @include media-breakpoint-sm {
+          height: 4px;
+        }
       }
     }
     + .product__title {
@@ -48,7 +57,7 @@
       font-size: 14px;
       padding: 8px 0;
     }
-    
+
     .icon {
       @include media-breakpoint-lg {
         width: 32px;
@@ -63,7 +72,6 @@
         height: 15px;
       }
     }
-   
   }
 
   &__banner {
@@ -75,25 +83,22 @@
       margin-bottom: 24px;
     }
     &__img {
-      
       height: 309px;
       background-repeat: no-repeat;
-      background-size:cover;
+      background-size: cover;
       background-position: center center;
-     
+
       @include media-breakpoint-sm {
         height: 144px;
       }
     }
-    &__left {
-      @include media-breakpoint-md {
-        background-image: url("../img/2@2x_md.png ");
-      }
+    .active {
+      display: block;
     }
-    &__right {
-      @include media-breakpoint-md {
-        background-image: url("../img/11@2x_md.png ");
-      }
+  }
+  &__lists {
+    .active {
+      display: block;
     }
   }
   &__list {
@@ -102,23 +107,29 @@
       margin-bottom: 104px;
       @include media-breakpoint-md {
         margin-bottom: 72px;
+        &:nth-last-child(1),
+        &:nth-last-child(2){
+          margin-bottom: 0;
+        }
       }
       @include media-breakpoint-sm {
         margin-bottom: 32px;
+        &:nth-child(4) {
+          margin-bottom: 0;
+        }
       }
-      &:nth-last-child(1),
-      &:nth-last-child(2),
-      &:nth-last-child(3),
-      &:nth-last-child(4) {
-        margin-bottom: 0;
-      }
+    }
+    @include media-breakpoint-md{
+      margin-bottom: 53px;
+    }
+    @include media-breakpoint-sm{
+      margin-bottom: 40px;
     }
   }
 
   &__price {
     color: map-get($color, secondary);
   }
-
   &__color {
     width: 24px;
     height: 24px;
@@ -134,6 +145,54 @@
   }
   &__pagination {
     margin-bottom: 156px;
-    
+
+    @include media-breakpoint-md {
+      margin-bottom: 104px;
+    }
+    @include media-breakpoint-sm {
+      margin-bottom: 56px;
+    }
+
+  }
+}
+
+.jsMenu__optical {
+  &__banner {
+    display: none;
+    .product__banner {
+      &__left {
+        @include media-breakpoint-md {
+          background-image: url("../img/2@2x_md.png ");
+        }
+      }
+      &__right {
+        @include media-breakpoint-md {
+          background-image: url("../img/11@2x_md.png ");
+        }
+      }
+    }
+  }
+  &__list {
+    display: none;
+  }
+}
+.jsMenu__sunglasses {
+  &__banner {
+    display: none;
+    .product__banner {
+      &__left {
+        @include media-breakpoint-md {
+          background-image: url("../img/80@2x_md.png ");
+        }
+      }
+      &__right {
+        @include media-breakpoint-md {
+          background-image: url("../img/15@2x_md.png ");
+        }
+      }
+    }
+  }
+  &__list {
+    display: none;
   }
 }

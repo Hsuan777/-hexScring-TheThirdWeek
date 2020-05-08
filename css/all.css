@@ -925,6 +925,20 @@ hr {
   background-color: #AA0601;
 }
 
+@media screen and (max-width: 576px) {
+  .product__featuresList .active::after {
+    height: 4px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product__featuresList {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .product__title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -949,6 +963,12 @@ hr {
   width: 100%;
   height: 16px;
   background-color: #AA0601;
+}
+
+@media screen and (max-width: 576px) {
+  .product__title:hover::after {
+    height: 4px;
+  }
 }
 
 .product__title + .product__title {
@@ -1026,16 +1046,12 @@ hr {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .product__banner__left {
-    background-image: url("../img/2@2x_md.png ");
-  }
+.product__banner .active {
+  display: block;
 }
 
-@media screen and (max-width: 768px) {
-  .product__banner__right {
-    background-image: url("../img/11@2x_md.png ");
-  }
+.product__lists .active {
+  display: block;
 }
 
 .product__list {
@@ -1050,16 +1066,30 @@ hr {
   .product__list > li {
     margin-bottom: 72px;
   }
+  .product__list > li:nth-last-child(1), .product__list > li:nth-last-child(2) {
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (max-width: 576px) {
   .product__list > li {
     margin-bottom: 32px;
   }
+  .product__list > li:nth-child(4) {
+    margin-bottom: 0;
+  }
 }
 
-.product__list > li:nth-last-child(1), .product__list > li:nth-last-child(2), .product__list > li:nth-last-child(3), .product__list > li:nth-last-child(4) {
-  margin-bottom: 0;
+@media screen and (max-width: 768px) {
+  .product__list {
+    margin-bottom: 53px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .product__list {
+    margin-bottom: 40px;
+  }
 }
 
 .product__price {
@@ -1084,6 +1114,58 @@ hr {
 
 .product__pagination {
   margin-bottom: 156px;
+}
+
+@media screen and (max-width: 768px) {
+  .product__pagination {
+    margin-bottom: 104px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .product__pagination {
+    margin-bottom: 56px;
+  }
+}
+
+.jsMenu__optical__banner {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .jsMenu__optical__banner .product__banner__left {
+    background-image: url("../img/2@2x_md.png ");
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .jsMenu__optical__banner .product__banner__right {
+    background-image: url("../img/11@2x_md.png ");
+  }
+}
+
+.jsMenu__optical__list {
+  display: none;
+}
+
+.jsMenu__sunglasses__banner {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .jsMenu__sunglasses__banner .product__banner__left {
+    background-image: url("../img/80@2x_md.png ");
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .jsMenu__sunglasses__banner .product__banner__right {
+    background-image: url("../img/15@2x_md.png ");
+  }
+}
+
+.jsMenu__sunglasses__list {
+  display: none;
 }
 
 .question__list {
@@ -2487,6 +2569,9 @@ hr {
   .mx-sm-0 {
     margin-left: 0;
     margin-right: 0;
+  }
+  .mb-sm-0 {
+    margin-bottom: 0;
   }
   .pt-sm-1 {
     padding-top: 0.5rem;
